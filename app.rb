@@ -32,3 +32,7 @@ end
 get '/:name' do
   haml params[:name].to_sym, :layout => :'layouts/application'
 end
+
+get '/wiki/:name' do
+  haml :"wiki/#{params[:name]}", :layout => :'layouts/application'
+end
