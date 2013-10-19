@@ -1,0 +1,5 @@
+.sass-cache
+.DS_Store
+tmp/**/*
+.rvmrc
+.bundle/
