@@ -9,5 +9,9 @@
     %script{:type => "text/javascript", :src => url("js/bootstrap.min.js")}
   %body
     = haml(:_header)
-    = yield
+    .container
+      .row
+        - if url().include? "wiki"
+          = haml(:_wiki_nav)
+        = yield
     = haml(:_footer)

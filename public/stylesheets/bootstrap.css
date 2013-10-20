@@ -302,7 +302,7 @@ html {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.428571429;
+  
   color: #333333;
   background-color: #ffffff;
 }
@@ -3807,7 +3807,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
 }
 
 .nav > li > a:hover,
