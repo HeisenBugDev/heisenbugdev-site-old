@@ -43,6 +43,9 @@ module RecipesModule
   end
 
   def render_smelting(blockitem)
+    if Recipes.recipe(blockitem) == nil
+      return "idiot! did not give a valid symbol"
+    end
     html = "<div class=\"recipe smelt\" style=\"background: url(#{url("images/wiki/smelt.png")})\">"
     html << "<div class=\"slot\" style=\"top: 15px; left: 49px;\">"
     html << render_stack(Recipes.recipe(blockitem).instance_variable_get(:@input), 1)
