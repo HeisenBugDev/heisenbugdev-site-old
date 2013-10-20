@@ -8,5 +8,8 @@ end
 
 module Localizations
   @@wiki_files = Dir["views/wiki/**/*.qc"]
-  @@localized = {quantumOre: "Quantonium Ore", test: "Test", test1: "Test 1"}
+  @@localized = {quantumOre: "Quantonium Ore", test: "Test", test1: "Test 1", items: "Items", blocks: "Blocks"}
+  def localized
+    @@localized
+  end
 end

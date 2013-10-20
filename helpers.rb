@@ -23,7 +23,7 @@ module RecipesModule
   module Recipes
     # Create the recipes here. Once you do that put the image files in public/images/wiki/
     @@recipes = {}
-    
+
     def self.new_recipe(name, recipe)
       @@recipes[name.to_sym] = recipe
     end
@@ -52,7 +52,7 @@ module RecipesModule
     html << render_stack(Recipes.recipe(blockitem).instance_variable_get(:@input), 1)
     html << "</div>"
     html << "<div class=\"slot\" style=\"top: 50px; left: 169px;\">"
-    html << render_stack(Recipes.recipe(blockitem).instance_variable_get(:@output), 
+    html << render_stack(Recipes.recipe(blockitem).instance_variable_get(:@output),
       Recipes.recipe(blockitem).instance_variable_get(:@quantity))
     html << "</div>"
     html << "</div>"
@@ -76,17 +76,23 @@ module RecipesModule
     html << "</div>"
     #Recipes.recipe(:dirt)
   end
-  
+
 end
 
 module WikiNav
+  require './definitions'
+  include Localizations
   def render_nav
     files = Dir.glob("views/wiki/**/*")
     html = ""
-    files.each do |path|
-      path.gsub! "views/wiki/", ""
+    files.each_with_index do |path, i|
+      base_name = File.basename(path, File.extname(path))
+      if File.directory?(path)
+        html << "<li class=\"nav-header\"><h3>#{localized[base_name.to_sym]}</h3></li>"
+      elsif path.include? ".qc"
+        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{localized[base_name.to_sym]}</a></li>"
+      end
     end
-    puts files
+    html
   end
 end
-
