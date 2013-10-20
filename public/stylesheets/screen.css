@@ -49,14 +49,6 @@ body {
   margin-left: 0px !important;
 }
 
-.smelt {
-  background: url("images/wiki/smelt.png");
-}
-
-.craft {
-  background: url("images/wiki/craft.png");
-}
-
 .recipe-wrapper {
   width: 522px;
   height: 132px;
