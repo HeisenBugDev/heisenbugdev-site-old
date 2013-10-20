@@ -22,6 +22,7 @@ module RecipesModule
   end
 
   class Recipes
+    # Create the recipes here. Once you do that put the image files in public/images/wiki/
     @@recipes = {}
     @@recipes[:cobblestone] = Smelting.new("cobblestone", "stone", 1)
     @@recipes[:dirt] = Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""])
@@ -39,6 +40,18 @@ module RecipesModule
     html << "<a href=\"#\" class=\"stack-link\">"; # Not done, still need to change that for things
     html << "<div class=\"recipe-icon\" style=\"background: url(#{url("images/wiki/#{blockitem}.png")});\" title=\"{$name}\">#{size}</div>";
     html << "</a>";
+  end
+
+  def render_smelting(blockitem)
+    html = "<div class=\"recipe smelt\" style=\"background: url(#{url("images/wiki/smelt.png")})\">"
+    html << "<div class=\"slot\" style=\"top: 15px; left: 49px;\">"
+    html << render_stack(Recipes.recipe(blockitem).instance_variable_get(:@input), 1)
+    html << "</div>"
+    html << "<div class=\"slot\" style=\"top: 50px; left: 169px;\">"
+    html << render_stack(Recipes.recipe(blockitem).instance_variable_get(:@output), 
+      Recipes.recipe(blockitem).instance_variable_get(:@quantity))
+    html << "</div>"
+    html << "</div>"
   end
 
   def render_crafting(blockitem)
