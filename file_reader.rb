@@ -11,7 +11,10 @@ module FileReader
   end
 
   def output(file_path)
-    file_string = File.open("views/#{file_path}.qc", "r").read
+    if file_path.reverse[0] == "/"
+      file_path = file_path.reverse.sub!("/","").reverse
+    end
+    file_string = File.open("views/#{file_path}.qc".gsub!("//","/"), "r").read
     file_name = File.basename(file_path, File.extname(file_path))
     html = "<h1>"
     html << WikiFiles.localized[file_name.to_sym]
@@ -24,7 +27,10 @@ module FileReader
     end
     html << file_string
     html << "</p>"
-    html << "<br/><h2>Recipe</h2>"
+    unless render_smelting(file_name.to_sym) == "" && 
+      render_crafting(file_name.to_sym) == ""
+      html << "<br/><h2>Recipe</h2>"
+    end
     html << render_smelting(file_name.to_sym)
     html << render_crafting(file_name.to_sym)
     haml html, :layout => :'layouts/application'

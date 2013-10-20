@@ -33,15 +33,20 @@ get '/stylesheets/:name.css' do
   scss(:"stylesheets/#{params[:name]}", Compass.sass_engine_options)
 end
 
-get '/' do
+get '/?' do
   haml :home, :layout => :'layouts/application'
 end
 
-get '/:name' do
-  haml params[:name].to_sym, :layout => :'layouts/application'
+get '/:name/?' do
+  if params[:name] == 'wiki'
+    file_path = request.path + "/meta/index"
+    output(file_path)
+  else
+    haml params[:name].to_sym, :layout => :'layouts/application'
+  end
 end
 
-get '/wiki/**:name' do
+get '/wiki/**:name/?' do
   file_path = request.path
   output(file_path)
 end

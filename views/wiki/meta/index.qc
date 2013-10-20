@@ -1,0 +1,1 @@
+Hello there! Welcome to the QuantumCraft wiki! Click on stuff!
