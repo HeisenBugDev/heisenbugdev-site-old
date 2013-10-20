@@ -1,5 +1,4 @@
 module RecipesModule
-
   class Recipe
     def initialize(name, input, output, quantity)
       @name = name
@@ -21,14 +20,16 @@ module RecipesModule
     end
   end
 
-  class Recipes
+  module Recipes
     # Create the recipes here. Once you do that put the image files in public/images/wiki/
     @@recipes = {}
-    @@recipes[:cobblestone] = Smelting.new("cobblestone", "stone", 1)
-    @@recipes[:dirt] = Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""])
+    
+    def self.new_recipe(name, recipe)
+      @@recipes[name.to_sym] = recipe
+    end
 
     def self.recipe(name)
-      @@recipes[name]
+      @@recipes[name.to_sym]
     end
   end
 
@@ -43,8 +44,8 @@ module RecipesModule
   end
 
   def render_smelting(blockitem)
-    if Recipes.recipe(blockitem) == nil
-      return "idiot! did not give a valid symbol"
+    if Recipes.recipe(blockitem) == nil || Recipes.recipe(blockitem).class == Crafting
+      return ""
     end
     html = "<div class=\"recipe smelt\" style=\"background: url(#{url("images/wiki/smelt.png")})\">"
     html << "<div class=\"slot\" style=\"top: 15px; left: 49px;\">"
@@ -58,8 +59,8 @@ module RecipesModule
   end
 
   def render_crafting(blockitem)
-    if Recipes.recipe(blockitem) == nil
-      return "idiot! did not give a valid symbol"
+    if Recipes.recipe(blockitem) == nil || Recipes.recipe(blockitem).class == Smelting
+      return ""
     end
     html = "<div class=\"recipe craft\" style=\"background: url(#{url("images/wiki/craft.png")})\">"
     9.times do |i|
@@ -77,3 +78,15 @@ module RecipesModule
   end
   
 end
+
+module WikiNav
+  def render_nav
+    files = Dir.glob("views/wiki/**/*")
+    html = ""
+    files.each do |path|
+      path.gsub! "views/wiki/", ""
+    end
+    puts files
+  end
+end
+

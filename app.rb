@@ -7,6 +7,7 @@ require 'sinatra'
 
 # Load after Sinatra
 require 'haml' #MUST BE AFTER
+require './file_reader.rb'
 
 # Set Sinatra's variables
 set :app_file, __FILE__
@@ -21,6 +22,8 @@ end
 
 helpers do
   include RecipesModule
+  include FileReader
+  include WikiNav
 end
 
 # At a minimum the main sass file must reside within the views directory
@@ -38,6 +41,7 @@ get '/:name' do
   haml params[:name].to_sym, :layout => :'layouts/application'
 end
 
-get '/wiki/:name' do
-  haml :"wiki/#{params[:name]}", :layout => :'layouts/application'
+get '/wiki/**:name' do
+  file_path = request.path
+  output(file_path)
 end
