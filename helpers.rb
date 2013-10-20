@@ -1,0 +1,60 @@
+module RecipesModule
+
+  class Recipe
+    def initialize(name, input, output, quantity)
+      @name = name
+      @input = input
+      @output = output
+      @quantity = quantity
+    end
+  end
+
+  class Smelting < Recipe
+    def initialize(input, output, quantity)
+      super("Smelting", input, output, quantity)
+    end
+  end
+
+  class Crafting < Recipe
+    def initialize  (output, quantity, input)
+      super("Crafting", input, output, quantity)
+    end
+  end
+
+  class Recipes
+    @@recipes = {}
+    @@recipes[:cobblestone] = Smelting.new("cobblestone", "stone", 1)
+    @@recipes[:dirt] = Crafting.new("sand", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""])
+
+    def self.recipe(name)
+      @@recipes[name]
+    end
+  end
+
+  def render_stack(blockitem, size)
+    if size < 2
+      size = nil
+    end
+    html = ""
+    html << "<a href=\"google.com\" class=\"stack-link\">";
+    html << "<div class=\"recipe-icon\" style=\"background: url(#{url("images/wiki/#{blockitem}.png")});\" title=\"{$name}\">#{size}</div>";
+    html << "</a>";
+  end
+  
+  def render_crafting
+    html = "<div class=\"recipe craft\" style=\"background: url(#{url("images/wiki/craft.png")})\">"
+    9.times do |i|
+      x = 14 + (i % 3)*36
+      y = 50 + (((i / 3)-0.2)-1).round * 36
+      html << "<div class=\"slot\" style=\"top: #{y}px; left: #{x}px;\">"
+      html << render_stack(Recipes.recipe(:dirt).instance_variable_get(:@input)[i],1)
+      html << "</div>"
+    end
+    html << "<div class=\"slot\" style=\"top: 50px; left: 202px;\">"
+
+    html << "</div>"
+    html << "</div>"
+    #Recipes.recipe(:dirt)
+  end
+  
+end

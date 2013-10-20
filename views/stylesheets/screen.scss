@@ -7,7 +7,26 @@ body {
   color: #5a5a5a;
 }
 
+/*** BLOCK AND ITEM PROPERTIES ***/
+#properties{ height: 94px; margin-bottom: 0px; border-bottom: 0px; }
+#icon{ background-size: 64px 64px; height: 64px; width: 64px; }
+#description{ border-top: none; }
+.wrapper{ float: left; }
+.wleft{ width: 79px; }
+.wright{ width: 461px; }
 
+/*** RECIPES ***/
+.recipe{ width: 256px; height: 132px; float: left; margin-left: 10px; background: #999; position: relative; }
+.recipe:first-child{ margin-left: 0px !important; }
+.smelt{ background: url('images/wiki/smelt.png'); }
+.craft{ background: url('images/wiki/craft.png'); }
+.recipe-wrapper{ width: 522px; height: 132px; margin-left: 10px; margin-right: 10px; margin-top: 10px; }
+.recipe-wrapper:last-child{ margin-bottom: 10px; }
+.recipe-divider{ height: 30px; line-height: 30px; font-size: 16px; padding-left: 10px; margin-top: 20px; border-top: 1px solid #888; border-bottom: 1px dotted #888; }
+.recipe-divider:first-child{ margin-top: 0px !important; border-top: none !important; }
+.recipe-icon{ background-size: 32px 32px !important; height: 32px; width: 32px; text-align: right; line-height: 50px; color: #fff; font-weight: bold; }
+.slot{ position: absolute; }
+a.stack-link{ text-decoration: none; }
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */

@@ -1,5 +1,6 @@
 # Load before Sinatra
 require 'compass'
+require './helpers.rb'
 
 # Sinatra!
 require 'sinatra'
@@ -16,6 +17,10 @@ set :haml, {:format => :html5 }
 # Configure Compass
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root, 'config.rb'))
+end
+
+helpers do
+  include RecipesModule
 end
 
 # At a minimum the main sass file must reside within the views directory
