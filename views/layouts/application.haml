@@ -11,7 +11,7 @@
     = haml(:_header)
     .container
       .row
-        - if url().include? "wiki"
+        - if request.path.include? "wiki"
           = haml(:_wiki_nav)
         = yield
     = haml(:_footer)
