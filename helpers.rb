@@ -32,15 +32,15 @@ module RecipesModule
       @@recipes[name.to_sym]
     end
   end
-
   def render_stack(blockitem, size)
     if size < 2
       size = nil
     end
     html = ""
-    html << "<a href=\"#\" class=\"stack-link\">"; # Not done, still need to change that for things
+
+    # html << "<a href=\"#{link}\" class=\"stack-link\">"; # Not done, still need to change that for things
     html << "<div class=\"recipe-icon\" style=\"background: url(#{url("images/wiki/#{blockitem}.png")});\" title=\"{$name}\">#{size}</div>";
-    html << "</a>";
+    # html << "</a>";
   end
 
   def render_smelting(blockitem)
