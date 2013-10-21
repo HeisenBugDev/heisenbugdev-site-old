@@ -39,7 +39,7 @@ end
 
 get '/:name/?' do
   if params[:name] == 'wiki'
-    file_path = request.path + "/meta/index"
+    file_path = request.path + "/a_meta/index"
     output(file_path)
   else
     haml params[:name].to_sym, :layout => :'layouts/application'
