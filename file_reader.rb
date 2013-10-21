@@ -24,7 +24,11 @@ module FileReader
     html << "<p>"
     WikiFiles.localized.invert.each do |key, value|
       if key != WikiFiles.localized[file_name.to_sym]
-        file_string.gsub! key, "<a href=\"#{value}\">#{key}</a>"
+        files = Dir["views/wiki/**/*#{value}.*"]
+        file = url(files[0])
+        file.sub!("views/", "")
+        file.sub!(".qc", "")
+        file_string.gsub! key, "<a href=\"#{file}\">#{key}</a>"
         file_string.gsub! "\n", "<br/>"
       end
     end
