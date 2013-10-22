@@ -79,9 +79,12 @@ module RecipesModule
 
 end
 
-module WikiNav
+module Wiki
   require './definitions'
   include Localizations
+  def render_guis(file_name)
+    html << "<img src=\"#{url("images/wiki/gui#{file_name}.png")}\"/>"
+  end
   def render_nav
     files = Dir.glob("views/wiki/**/*").sort
     html = ""

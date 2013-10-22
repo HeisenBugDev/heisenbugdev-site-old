@@ -23,7 +23,7 @@ end
 helpers do
   include RecipesModule
   include FileReader
-  include WikiNav
+  include Wiki
 end
 
 # At a minimum the main sass file must reside within the views directory

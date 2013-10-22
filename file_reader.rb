@@ -40,6 +40,7 @@ module FileReader
     end
     html << render_smelting(file_name.to_sym)
     html << render_crafting(file_name.to_sym)
+    html << render_guis(file_name)
     html << "</div>"
     haml html, :layout => :'layouts/application'
   end
