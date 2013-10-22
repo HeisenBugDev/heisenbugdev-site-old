@@ -1,0 +1,1 @@
+It's a battery you charge in a Quantum Energy Injector and discharge in a Quantum Energy Extractor

@@ -1,0 +1,1 @@
+The Quantum Energy Injector also called QEInjector or QEI, is the second device developed and manufactured by Quantonium Industries. The purpose of this incredible machine is embedding Quantum Energy into items that can hold it. (Quantum Tools)

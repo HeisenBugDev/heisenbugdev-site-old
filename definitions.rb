@@ -14,10 +14,22 @@ module Localizations
     a_meta: "Meta",
     blocks: "Blocks",
     items: "Items",
+    development: "Development",
     index: "Home",
+    machines: "Machines",
     quantoniumOre: "Quantonium Ore",
     rawQuantonium: "Raw Quantonium",
-    crystallizedQuantonium: "Crystallized Quantonium"
+    crystallizedQuantonium: "Crystallized Quantonium",
+    quantumTools: "Quantum Tools",
+    quantumPortableCapicator: "Quantum Portable Capicator",
+    unbioxeniumOre: "Unbioxenium Ore",
+    nameDatabase: "Name Database",
+    :QDE => "Quantum De-Energizer",
+    :QEI => "Quantum Energy Injector",
+    :QEE => "Quantum Energy Extractor",
+    :QDM => "Quantum De-Materializer",
+    :QDS => "Quantum Dislocator",
+    mcForumPost: "Minecraft Forum Post"
   }
   def localized
     @@localized

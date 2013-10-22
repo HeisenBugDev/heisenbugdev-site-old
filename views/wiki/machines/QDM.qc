@@ -1,0 +1,1 @@
+The Quantum De-Materializer (QDematerializer, QDM) is a machine invented by the famous Quantonium Industries. It can extract a tiny amount of Quantum Energy from just about anything. (This includes your house MWAHAHAHAHAHHA).

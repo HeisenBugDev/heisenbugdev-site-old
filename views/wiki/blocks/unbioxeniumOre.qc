@@ -1,0 +1,1 @@
+Unbioxenium is the basic building material in QuantumCraft. When you break a block of Unbioxenium Ore, it will drop itself, and when you smelt it, you get a Unbioxenium Ingot.

@@ -1,0 +1,1 @@
+Raw Quantonium is a material received upon breaking a block of Quantonium Ore. It is also used in production of Crystallized Quantonium.

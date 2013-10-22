@@ -1,0 +1,1 @@
+Crystallized Quantonium is used for extraction of Quantum Energy. You can get it by smelting Raw Quantonium. When you put this material into a Quantum De-Energizer, It will be turned to a single Depleted Crystal and 100 Quantum Energy Units (QEU)

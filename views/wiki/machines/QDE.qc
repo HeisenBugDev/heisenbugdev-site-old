@@ -1,0 +1,1 @@
+The Quantum Deenergizer or QDeenergizer or even QDE for short, is a device from Quantonium Industries that has been in design for a few days. Simply place some Crystallized Quantonium in the left hand slot and out comes a Depleted Crystal. In the process of doing so it generates 100 Quantum Energy Units.

@@ -1,0 +1,1 @@
+The Quantum Energy Extractor (QEExtractor, QEE) is the third device engineered by Quantonium Industries. Unlike the Quantum Energy Injector, this machine Extracts energy from chargable items. (Quantum Tools).

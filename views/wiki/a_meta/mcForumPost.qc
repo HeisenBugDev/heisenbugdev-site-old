@@ -1,0 +1,1 @@
+<meta http-equiv="refresh" content="0; url=http://www.minecraftforum.net/topic/1891103-162-quantumcraft-wip/">
