@@ -83,7 +83,7 @@ module WikiNav
   require './definitions'
   include Localizations
   def render_nav
-    files = Dir.glob("views/wiki/**/*")
+    files = Dir.glob("views/wiki/**/*").sort
     html = ""
     files.each_with_index do |path, i|
       base_name = File.basename(path, File.extname(path))
