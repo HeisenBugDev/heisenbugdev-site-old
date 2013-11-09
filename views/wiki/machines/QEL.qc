@@ -1,0 +1,1 @@
+The Quantum Electrifier is an amazing piece of technology that allows you to convert Quantum Energy to BC MJ energy. Simple hook it up to a Quantum Energy Network and connect a wooden kinesis pipe to it. Tada, you now have power!

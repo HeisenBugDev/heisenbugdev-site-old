@@ -29,6 +29,9 @@ module Localizations
     :QEE => "Quantum Energy Extractor",
     :QDM => "Quantum De-Materializer",
     :QDS => "Quantum Dislocator",
+    :QDL => "Quantum De-Electrifier",
+    :QEL => "Quantum Electrifier",
+    :IOF => "ION Forge",
     mcForumPost: "Minecraft Forum Post"
   }
   def localized
