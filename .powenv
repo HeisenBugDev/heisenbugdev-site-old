@@ -1,0 +1,12 @@
+export PATH ; PATH="/Users/theron/.rvm/gems/ruby-2.0.0-p247@heisenbugdev-site/bin:/Users/theron/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/theron/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/theron/.rvm/bin:$PATH"
+export rvm_env_string ; rvm_env_string='ruby-2.0.0-p247@heisenbugdev-site'
+export rvm_path ; rvm_path='/Users/theron/.rvm'
+export rvm_ruby_string ; rvm_ruby_string='ruby-2.0.0-p247'
+export rvm_gemset_name ; rvm_gemset_name='heisenbugdev-site'
+export RUBY_VERSION ; RUBY_VERSION='ruby-2.0.0-p247'
+export GEM_HOME ; GEM_HOME='/Users/theron/.rvm/gems/ruby-2.0.0-p247@heisenbugdev-site'
+export GEM_PATH ; GEM_PATH='/Users/theron/.rvm/gems/ruby-2.0.0-p247@heisenbugdev-site:/Users/theron/.rvm/gems/ruby-2.0.0-p247@global'
+export MY_RUBY_HOME ; MY_RUBY_HOME='/Users/theron/.rvm/rubies/ruby-2.0.0-p247'
+export IRBRC ; IRBRC='/Users/theron/.rvm/rubies/ruby-2.0.0-p247/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
