@@ -83,7 +83,7 @@ module Wiki
   require './definitions'
   include Localizations
   def render_guis(file_name)
-    if File.exist?(url("images/wiki/gui#{file_name}.png"))
+    if File.exist?("public/images/wiki/gui#{file_name}.png")
       html = ""
       html << "<img src=\"#{url("images/wiki/gui#{file_name}.png")}\"/>"
     else

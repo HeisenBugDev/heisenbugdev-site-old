@@ -19,7 +19,7 @@ module FileReader
     html = "<div class=\"col-md-9\">"
     html << "<h1>"
     html << WikiFiles.localized[file_name.to_sym]
-    if File.exist?(url("images/wiki/#{file_name}.png"))      
+    if File.exist?("public/images/wiki/#{file_name}.png")      
       html << "<img width=\"212\" height=\"160\" src=\"#{url("images/wiki/#{file_name}.png")}\"/>"
     end
     html << "</h1>"
