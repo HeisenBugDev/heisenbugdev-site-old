@@ -83,8 +83,12 @@ module Wiki
   require './definitions'
   include Localizations
   def render_guis(file_name)
-    html = ""
-    html << "<img src=\"#{url("images/wiki/gui#{file_name}.png")}\"/>"
+    if File.exist?(url("images/wiki/gui#{file_name}.png"))
+      html = ""
+      html << "<img src=\"#{url("images/wiki/gui#{file_name}.png")}\"/>"
+    else
+      ""
+    end
   end
   def render_nav
     files = Dir.glob("views/wiki/**/*").sort
