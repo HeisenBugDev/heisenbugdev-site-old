@@ -35,6 +35,7 @@ module Localizations
     :IOT => "ION Tunneler",
     :IOS => "ION Scanner",
     :IOH => "ION Harvester",
+    guide: => "Getting Started"
     mcForumPost: "Minecraft Forum Post"
   }
   def localized
