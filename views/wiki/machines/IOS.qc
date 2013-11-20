@@ -1,0 +1,1 @@
+The ION Scanner is a machine that will scan for ores in an area 30 blocks up, down, left, right, etc around the machine. To get the ores out of the ground, you must use an ION Harvester. It costs 1 QEU per tick constantly.

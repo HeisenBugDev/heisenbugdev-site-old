@@ -32,6 +32,9 @@ module Localizations
     :QDL => "Quantum De-Electrifier",
     :QEL => "Quantum Electrifier",
     :IOF => "ION Forge",
+    :IOT => "ION Tunneler",
+    :IOS => "ION Scanner",
+    :IOH => "ION Harvester",
     mcForumPost: "Minecraft Forum Post"
   }
   def localized
