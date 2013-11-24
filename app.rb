@@ -6,14 +6,14 @@ require './helpers.rb'
 require 'sinatra'
 
 # Load after Sinatra
-require 'haml' #MUST BE AFTER
+require 'haml'
 require './file_reader.rb'
 
 # Set Sinatra's variables
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
 set :views, 'views'
-set :haml, {:format => :html5 }
+set :haml, { :format => :html5 }
 
 # Configure Compass
 configure do
@@ -49,4 +49,8 @@ end
 get '/wiki/**:name/?' do
   file_path = request.path
   output(file_path)
+end
+
+get '/downloads/?' do
+  haml :downloads, :layout => :'layouts/application'
 end
