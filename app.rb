@@ -37,7 +37,7 @@ end
 
 get '/updatedownloads/?' do
   get_downloads.each do |build|
-    file = get_JSON(build['number'])['artifacts'][0]['fileName']
+    file = get_json(build['number'])['artifacts'][0]['fileName']
     unless File.exist?("./downloads/#{file}")
       download_build(build['number'], file)
     end
