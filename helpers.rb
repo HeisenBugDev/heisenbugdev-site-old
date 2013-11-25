@@ -80,8 +80,7 @@ module RecipesModule
 end
 
 module Wiki
-  require './definitions'
-  include Localizations
+  require_relative 'definitions'
   def render_guis(file_name)
     if File.exist?("public/images/wiki/gui#{file_name}.png")
       html = ""
@@ -96,9 +95,9 @@ module Wiki
     files.each_with_index do |path, i|
       base_name = File.basename(path, File.extname(path))
       if File.directory?(path)
-        html << "<li class=\"nav-header\"><h3>#{localized[base_name.to_sym]}</h3></li>"
+        html << "<li class=\"nav-header\"><h3>#{Localizations::localized[base_name.to_sym]}</h3></li>"
       elsif path.include? ".qc"
-        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{localized[base_name.to_sym]}</a></li>"
+        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{Localizations::localized[base_name.to_sym]}</a></li>"
       end
     end
     html
