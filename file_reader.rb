@@ -1,4 +1,4 @@
-require './definitions.rb'
+require_relative 'definitions'
 module FileReader
   file_path = ""
 
