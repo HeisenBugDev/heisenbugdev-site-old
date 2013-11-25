@@ -5,13 +5,10 @@ module BuildFetcher
   JENKINS_URI = URI.parse('http://ci.theronsminecraft.com')
 
   def get_downloads
-    get_JSON['builds']
+    get_json['builds']
   end
 
-  def get_JSON(job=nil)
-    if job
-      job = "/#{job}"
-    end
+  def get_json(job=nil)
     http     = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
     request  = Net::HTTP::Get.new("/job/QuantumCraft/#{job}/api/json")
     response = http.request(request)
