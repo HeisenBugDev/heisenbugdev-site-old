@@ -1,4 +1,5 @@
 .container
-  - Dir.glob('public/downloads/*.*') do |file|
+  - Dir.glob('public/downloads/*') do |file|
     %a{:href => url(file.sub!('public/',''))}
       = File.basename(file)
+      %br
