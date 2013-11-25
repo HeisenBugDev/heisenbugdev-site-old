@@ -38,7 +38,7 @@ module Localizations
     guide: "Getting Started",
     mcForumPost: "Minecraft Forum Post"
   }
-  def localized
+  def self.localized
     @@localized
   end
 end
