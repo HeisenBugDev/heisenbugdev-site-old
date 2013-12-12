@@ -14,3 +14,7 @@
             %td
               = get_mc_version(file[0]['fileName']).to_s.gsub!('-','')
             %td
+              - types = get_download_types(file)
+              - file.each_with_index do |a_file, i|
+                %a{:href => "http://ci.theronsminecraft.com/job/QuantumCraft/#{@numbers[index]}/artifact/build/libs/#{a_file['fileName']}"}
+                  = types[i]
