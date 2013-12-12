@@ -15,6 +15,26 @@ module BuildHandler
     JSON.parse(response.body)
   end
 
+  def get_version(file_name_rec)
+    file_name = file_name_rec + ''
+    mc_version = get_mc_version(file_name).to_s
+    puts mc_version
+    wrapped_words = get_wrapped_words(file_name).to_s.reverse.sub!('-','').reverse
+    puts wrapped_words
+    file_name.sub!(mc_version,'')
+    file_name.sub!(wrapped_words,'')
+    file_name.sub!('QuantumCraft','')
+    file_name.sub!('.jar', '')
+  end
+
+  def get_wrapped_words(file_name)
+    /[-](.*?)[-]/.match(file_name)
+  end
+
+  def get_mc_version(file_name)
+    /[-]((\d|\.)*?)[-]/.match(file_name)
+  end
+
   def download_build(build, file)
     Net::HTTP.start("ci.theronsminecraft.com") do |http|
       resp = http.get("/job/QuantumCraft/#{build}/dist/#{file}")
