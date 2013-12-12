@@ -18,9 +18,7 @@ module BuildHandler
   def get_version(file_name_rec)
     file_name = file_name_rec + ''
     mc_version = get_mc_version(file_name).to_s
-    puts mc_version
     wrapped_words = get_wrapped_words(file_name).to_s.reverse.sub!('-','').reverse
-    puts wrapped_words
     file_name.sub!(mc_version,'')
     file_name.sub!(wrapped_words,'')
     file_name.sub!('QuantumCraft','')
@@ -33,6 +31,14 @@ module BuildHandler
 
   def get_mc_version(file_name)
     /[-]((\d|\.)*?)[-]/.match(file_name)
+  end
+
+  def get_download_types(files)
+    types = []
+    files.each do |file|
+      types << get_wrapped_words(file['fileName']).to_s.gsub('-','')
+    end
+    types
   end
 
   def download_build(build, file)
