@@ -1,7 +1,7 @@
 require 'json'
 require 'net/http'
 
-module BuildFetcher
+module BuildHandler
   JENKINS_URI = URI.parse('http://ci.theronsminecraft.com')
 
   def get_downloads
