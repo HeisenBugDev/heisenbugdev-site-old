@@ -8,7 +8,7 @@ require 'sinatra'
 require 'haml'
 require_relative 'file_reader'
 require_relative 'helpers'
-require_relative 'build_fetcher'
+require_relative 'build_handler'
 
 # Set Sinatra's variables
 set :app_file, __FILE__
@@ -25,7 +25,7 @@ helpers do
   include RecipesModule
   include FileReader
   include Wiki
-  include BuildFetcher
+  include BuildHandler
 end
 
 # At a minimum the main sass file must reside within the views directory
@@ -35,14 +35,14 @@ get '/stylesheets/:name.css' do
   scss(:"stylesheets/#{params[:name]}", Compass.sass_engine_options)
 end
 
-get '/updatedownloads/?' do
+get '/downloads/?' do
+  @files = []
+  @numbers = []
   get_downloads.each do |build|
-    file = get_json(build['number'])['artifacts'][0]['fileName']
-    unless File.exist?("./downloads/#{file}")
-      download_build(build['number'], file)
-    end
+    @files << get_json(build['number'])['artifacts']
+    @numbers << build['number']
   end
-  "Updating files"
+  haml :downloads, :layout => :'layouts/application'
 end
 
 get '/?' do
