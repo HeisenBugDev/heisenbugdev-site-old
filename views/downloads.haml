@@ -1,5 +1,16 @@
 .container
-  - Dir.glob('public/downloads/*') do |file|
-    %a{:href => url(file.sub!('public/',''))}
-      = File.basename(file)
-      %br
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th Version
+        %th MC Version
+        %th Download
+    %tbody
+      - @files.each_with_index do |file, index|
+        - unless index > 5
+          %tr
+            %td
+              = get_version(file[0]['fileName'])
+            %td
+              = get_mc_version(file[0]['fileName']).to_s.gsub!('-','')
+            %td
