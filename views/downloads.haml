@@ -16,5 +16,6 @@
             %td
               - types = get_download_types(file)
               - file.each_with_index do |a_file, i|
-                %a{:href => "http://ci.theronsminecraft.com/job/QuantumCraft/#{@numbers[index]}/artifact/build/libs/#{a_file['fileName']}"}
-                  = types[i]
+                %button.btn.btn-default
+                  %a{:href => "http://ci.theronsminecraft.com/job/QuantumCraft/#{@numbers[index]}/artifact/build/libs/#{a_file['fileName']}"}
+                    = types[i]
