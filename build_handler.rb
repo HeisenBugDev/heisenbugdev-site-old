@@ -46,14 +46,4 @@ module BuildHandler
     types
   end
 
-  def download_build(build, file)
-    Net::HTTP.start("ci.theronsminecraft.com") do |http|
-      resp = http.get("/job/QuantumCraft/#{build}/dist/#{file}")
-      Dir.chdir("public/downloads")
-      open(file, "wb") do |file_down|
-        file_down.write(resp.body)
-      end
-      Dir.chdir(File.dirname(__FILE__))
-    end
-  end
 end
