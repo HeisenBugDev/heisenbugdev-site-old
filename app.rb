@@ -36,6 +36,9 @@ get '/stylesheets/:name.css' do
 end
 
 get '/downloads/?' do
+  if get_json('builds')
+    return haml 'Cannot get builds at this time.', :layout => :'layouts/application'
+  end
   @files = []
   @numbers = []
   get_downloads.each do |build|
