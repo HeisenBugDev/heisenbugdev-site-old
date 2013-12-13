@@ -20,12 +20,12 @@ module BuildHandler
   end
 
   def get_version(file_name_rec)
-    file_name = file_name_rec + ''
-    mc_version = get_mc_version(file_name).to_s
-    wrapped_words = get_wrapped_words(file_name).to_s.reverse.sub!('-','').reverse
-    file_name.sub!(mc_version,'')
-    file_name.sub!(wrapped_words,'')
-    file_name.sub!('QuantumCraft','')
+    file_name     = file_name_rec + ''
+    mc_version    = get_mc_version(file_name).to_s
+    wrapped_words = get_wrapped_words(file_name).to_s.reverse.sub!('-', '').reverse
+    file_name.sub!(mc_version, '')
+    file_name.sub!(wrapped_words, '')
+    file_name.sub!('QuantumCraft', '')
     file_name.sub!('.jar', '')
   end
 
@@ -40,7 +40,7 @@ module BuildHandler
   def get_download_types(files)
     types = []
     files.each do |file|
-      types << get_wrapped_words(file['fileName']).to_s.gsub('-','')
+      types << get_wrapped_words(file['fileName']).to_s.gsub('-', '')
     end
     types
   end
