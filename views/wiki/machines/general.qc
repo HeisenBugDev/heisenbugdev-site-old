@@ -1,0 +1,1 @@
+Any machine can be turned off by sending it a redstone signal.
