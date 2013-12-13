@@ -18,7 +18,8 @@ set :haml, { :format => :html5 }
 
 # Configure Compass
 configure do
-  Compass.add_project_configuration(File.join(Sinatra::Application.root, 'config.rb'))
+  Compass.add_project_configuration(File.join(Sinatra::Application.root,
+                                              'config.rb'))
 end
 
 helpers do
@@ -41,7 +42,8 @@ end
 
 get '/downloads/?' do
   if get_json('QuantumCraft')['builds'] == :error
-    return haml 'Cannot get builds at this time.', :layout => :'layouts/application'
+    return haml 'Cannot get builds at this time.',
+                :layout => :'layouts/application'
   end
   @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
   @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
