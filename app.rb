@@ -39,11 +39,13 @@ get '/downloads/?' do
   if get_json['builds'] == :error
     return haml 'Cannot get builds at this time.', :layout => :'layouts/application'
   end
-  @files = []
+  @files   = []
   @numbers = []
-  get_downloads.each do |build|
-    @files << get_json(build['number'])['artifacts']
-    @numbers << build['number']
+  get_downloads.each_with_index do |build, index|
+    unless index > 10
+      @files << get_json(build['number'])['artifacts']
+      @numbers << build['number']
+    end
   end
   haml :downloads, :layout => :'layouts/application'
 end
