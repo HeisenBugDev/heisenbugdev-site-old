@@ -47,6 +47,7 @@ get '/downloads/?' do
   end
   @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
   @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
+  @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
   @descriptions = ['These are the most stable builds, you should start with t'\
                   'hese.', 'You\'re living on the edge, a tech guru, someone '\
                   'who will deal with bugs (and report them). These are highl'\
