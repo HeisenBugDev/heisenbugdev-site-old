@@ -1,0 +1,1 @@
+This is like a wrench from other mods. If you right click on a block, it will rotate, shift right click on a machine will make it drop and the block dropped will keep its power.

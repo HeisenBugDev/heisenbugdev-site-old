@@ -35,6 +35,8 @@ module Localizations
     :IOT => "ION Tunneler",
     :IOS => "ION Scanner",
     :IOH => "ION Harvester",
+    :QCP => "Quantum Capacitor",
+    multiTool: "Multi Tool",
     guide: "Getting Started",
     mcForumPost: "Minecraft Forum Post"
   }
