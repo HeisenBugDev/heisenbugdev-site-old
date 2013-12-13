@@ -1,6 +1,6 @@
 # Load before Sinatra
 require 'compass'
-
+require 'rack/cache'
 # Sinatra!
 require 'sinatra'
 
@@ -26,6 +26,10 @@ helpers do
   include FileReader
   include Wiki
   include BuildHandler
+end
+
+before do
+  cache_control :public, :must_revalidate, :max_age => 60
 end
 
 # At a minimum the main sass file must reside within the views directory
