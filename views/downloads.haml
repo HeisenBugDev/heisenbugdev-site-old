@@ -7,7 +7,7 @@
         %th Download
     %tbody
       - @files.each_with_index do |file, index|
-        - unless index > 5
+        - unless index > 1
           %tr
             %td
               = get_version(file[0]['fileName'])
