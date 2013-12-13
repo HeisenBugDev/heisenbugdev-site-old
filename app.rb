@@ -9,7 +9,7 @@ require 'haml'
 require_relative 'file_reader'
 require_relative 'helpers'
 require_relative 'build_handler'
-
+use Rack::Cache
 # Set Sinatra's variables
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
