@@ -9,10 +9,14 @@ module BuildHandler
   end
 
   def get_json(job=nil)
-    http     = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
-    request  = Net::HTTP::Get.new("/job/QuantumCraft/#{job}/api/json")
-    response = http.request(request)
-    JSON.parse(response.body)
+    begin
+      http     = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
+      request  = Net::HTTP::Get.new("/job/QuantumCraft/#{job}/api/json")
+      response = http.request(request)
+      JSON.parse(response.body)
+    rescue SocketError
+      :error
+    end
   end
 
   def get_version(file_name_rec)
