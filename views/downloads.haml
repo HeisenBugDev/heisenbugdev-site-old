@@ -17,6 +17,8 @@
       %small
         %a{:href => "http://ci.theronsminecraft.com/job/#{name}"}
           (More)
+        %a{:href => "https://github.com/#{@repo_orgs[name_index]}/#{@file_names[name_index]}/releases/"}
+          (Simple changelogs)
     %h3
       %small
         = @descriptions[name_index]
@@ -26,6 +28,7 @@
           %th Version
           %th MC Version
           %th Download
+          %th Changelog
       %tbody
         - @files.each_with_index do |file, index|
           - unless index > 1
@@ -39,3 +42,7 @@
                 - file.each_with_index do |a_file, i|
                   %a{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[index]}/artifact/build/libs/#{a_file['fileName']}", :class => "btn btn-default"}
                     = types[i]
+              %td
+                %a{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[index]}/changes"}
+                  Detailed Changelog
+
