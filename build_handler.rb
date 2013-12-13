@@ -26,6 +26,7 @@ module BuildHandler
     file_name.sub!(mc_version, '')
     file_name.sub!(wrapped_words, '')
     file_name.sub!('QuantumCraft', '')
+    file_name.sub!('quantumcraft','')
     file_name.sub!('.jar', '')
   end
 
