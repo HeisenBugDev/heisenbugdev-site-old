@@ -30,7 +30,7 @@ helpers do
 end
 
 before do
-  cache_control :public, :must_revalidate, :max_age => 60
+  expires 60, :public, :must_revalidate
 end
 
 # At a minimum the main sass file must reside within the views directory
@@ -46,6 +46,11 @@ get '/downloads/?' do
                 :layout => :'layouts/application'
   end
   @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
+  @json = []
+  @names.each do |name|
+    @json << get_json(name)
+  end
+  etag @json.hash
   @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
   @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
   @descriptions = ['These are the most stable builds, you should start with t'\
