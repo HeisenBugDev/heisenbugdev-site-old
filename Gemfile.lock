@@ -10,6 +10,8 @@ GEM
     haml (4.0.3)
       tilt
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-protection (1.5.0)
       rack
     sass (3.2.12)
@@ -25,4 +27,5 @@ PLATFORMS
 DEPENDENCIES
   compass
   haml
+  rack-cache (~> 1.2)
   sinatra
