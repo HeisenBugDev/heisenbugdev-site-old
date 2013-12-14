@@ -1,0 +1,1 @@
+The Hyper Conductor is an item used in recipes but has no use by itself. It is like Quantum Plating.
