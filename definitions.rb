@@ -1,22 +1,23 @@
 require_relative "helpers"
 
+#noinspection RubyLiteralArrayInspection
 module RecipeDefinitions
   include RecipesModule
   Recipes.new_recipe(:crystallizedQuantonium, Smelting.new("rawQuantonium",
-                                                           "crystallizedQuantonium", 1))
-  Recipes.new_recipe(:QCP, Crafting.new("quantumPlating",
+                                                           "crystalQuantonium", 1))
+  Recipes.new_recipe(:quantumPlating, Crafting.new('quantumPlating',
                                                    1,
                                                    ['ingotUnbioxenium',
-                                                    'ingotUniboxenium',
-                                                    'ingotUniboxenium',
-                                                    'ingotUniboxenium',
+                                                    'ingotUnbioxenium',
+                                                    'ingotUnbioxenium',
+                                                    'ingotUnbioxenium',
                                                     'crystalQuantonium',
-                                                    'ingotUniboxenium',
-                                                    'ingotUniboxenium',
-                                                    'ingotUniboxenium',
-                                                    'ingotUniboxenium']))
+                                                    'ingotUnbioxenium',
+                                                    'ingotUnbioxenium',
+                                                    'ingotUnbioxenium',
+                                                    'ingotUnbioxenium']))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
-  Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
+  # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
 
 module Localizations
@@ -30,11 +31,12 @@ module Localizations
       machines:                 "Machines",
       quantoniumOre:            "Quantonium Ore",
       rawQuantonium:            "Raw Quantonium",
-      crystallizedQuantonium:   "Crystallized Quantonium",
+      crystalQuantonium:   "Crystallized Quantonium",
       quantumTools:             "Quantum Tools",
       quantumPortableCapicator: "Quantum Portable Capicator",
       unbioxeniumOre:           "Unbioxenium Ore",
       nameDatabase:             "Name Database",
+      quantumPlating:           "Quantum Plating",
       :QDE                      => "Quantum De-Energizer",
       :QEI                      => "Quantum Energy Injector",
       :QEE                      => "Quantum Energy Extractor",
