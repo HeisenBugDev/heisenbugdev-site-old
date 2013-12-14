@@ -9,6 +9,7 @@ GEM
     fssm (0.2.10)
     haml (4.0.3)
       tilt
+    newrelic_rpm (3.7.0.177)
     rack (1.5.2)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -27,5 +28,6 @@ PLATFORMS
 DEPENDENCIES
   compass
   haml
+  newrelic_rpm (~> 3.7.0.177)
   rack-cache (~> 1.2)
   sinatra

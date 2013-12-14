@@ -22,6 +22,10 @@ configure do
                                               'config.rb'))
 end
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 helpers do
   include RecipesModule
   include FileReader
