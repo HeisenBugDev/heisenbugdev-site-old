@@ -31,7 +31,7 @@ module Localizations
       machines:                 "Machines",
       quantoniumOre:            "Quantonium Ore",
       rawQuantonium:            "Raw Quantonium",
-      crystalQuantonium:   "Crystallized Quantonium",
+      crystalQuantonium:        "Crystallized Quantonium",
       quantumTools:             "Quantum Tools",
       quantumPortableCapicator: "Quantum Portable Capicator",
       unbioxeniumOre:           "Unbioxenium Ore",
@@ -49,7 +49,7 @@ module Localizations
       :IOS                      => "ION Scanner",
       :IOH                      => "ION Harvester",
       :QCP                      => "Quantum Capacitor",
-      general:                  "General",
+      A_general:                "General",
       multiTool:                "Multi Tool",
       guide:                    "Getting Started",
       mcForumPost:              "Minecraft Forum Post"
