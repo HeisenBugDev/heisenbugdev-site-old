@@ -16,10 +16,10 @@ module FileReader
     end
     file_string = File.open("views/#{file_path}.qc".gsub!("//","/"), "r").read
     file_name = File.basename(file_path, File.extname(file_path))
-    html = "<div class=\"col-md-9\">"
+    html = "<div class=\"twelve wide right floated column\">"
     html << "<h1>"
     html << WikiFiles.localized[file_name.to_sym]
-    if File.exist?("public/images/wiki/#{file_name}.png")      
+    if File.exist?("public/images/wiki/#{file_name}.png")
       html << "<img class=\"no-aa-image\" width=\"10%\" height=\"auto\" src=\"#{url("images/wiki/#{file_name}.png")}\"/>"
     end
     html << "</h1>"
