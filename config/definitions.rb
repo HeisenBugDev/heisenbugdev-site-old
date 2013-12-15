@@ -118,6 +118,10 @@ end
 
 module Localizations
   @@wiki_files = Dir["views/wiki/**/*.qc"]
+  @@beta = {
+    :QDS => true
+  }
+
   @@localized  = {
       :a_meta                     => "Meta",
       :blocks                     => "Blocks",
@@ -157,5 +161,9 @@ module Localizations
 
   def self.localized
     @@localized
+  end
+
+  def self.beta
+    @@beta
   end
 end
