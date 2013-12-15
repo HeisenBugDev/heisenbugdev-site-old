@@ -111,7 +111,13 @@ module Wiki
       if File.directory?(path)
         html << "<li class=\"nav-header\"><h3>#{Localizations::localized[base_name.to_sym]}</h3></li>"
       elsif path.include? ".qc"
-        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{Localizations::localized[base_name.to_sym]}</a></li>"
+        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{Localizations::localized[base_name.to_sym]}"
+        size = 20
+        if path.include? "items"
+          size = 10
+        end
+        html <<"<img width=\"#{size}%\" height=\"auto\" src=\"#{url("images/wiki/#{base_name}.png")}\"/></li>"
+        html << "</a>"
       end
     end
     html
