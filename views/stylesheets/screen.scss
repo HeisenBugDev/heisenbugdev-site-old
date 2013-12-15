@@ -7,6 +7,19 @@ body {
   color: #5a5a5a;
 }
 
+.menu-icon {
+  height: 16px;
+  width: 16px;
+  background-size: 16px 16px !important;
+  float: left;
+  margin-right: 5px;
+}
+
+a .menu-item {
+  padding: 2px;
+  border-bottom: 1px dotted rgb(200, 200, 200);
+  line-height: 16px;
+}
 
 /*** BLOCK AND ITEM PROPERTIES ***/
 #properties{ height: 94px; margin-bottom: 0px; border-bottom: 0px; }
