@@ -27,8 +27,7 @@ body {
 }
 
 a .menu-item {
-  padding: 2px;
-  border-bottom: 1px dotted #c8c8c8;
+  padding: 10px;
   line-height: 16px;
 }
 
