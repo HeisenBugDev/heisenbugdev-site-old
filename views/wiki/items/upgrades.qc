@@ -1,0 +1,1 @@
+The upgrades in QuantumCraft allow you to alter the way machines work. There are currently the Blank Upgrade or Upgrade Template and the Overclock Upgrade.
