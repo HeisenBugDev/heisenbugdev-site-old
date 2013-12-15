@@ -73,18 +73,18 @@ module RecipesModule
     end
     html = ''
     Recipes.recipe(blockitem).each do |block_item|
-    html << "<div class=\"recipe craft\" style=\"background: url(#{url("images/wiki/craft.png")})\">"
-    9.times do |i|
-      x = 14 + (i % 3)*36
-      y = 50 + (((i / 3)-0.2)-1).round * 36
-      html << "<div class=\"slot\" style=\"top: #{y}px; left: #{x}px;\">"
-      html << render_stack(block_item.instance_variable_get(:@input)[i], 1)
+      html << "<div class=\"recipe craft\" style=\"background: url(#{url("images/wiki/craft.png")})\">"
+      9.times do |i|
+        x = 14 + (i % 3)*36
+        y = 50 + (((i / 3)-0.2)-1).round * 36
+        html << "<div class=\"slot\" style=\"top: #{y}px; left: #{x}px;\">"
+        html << render_stack(block_item.instance_variable_get(:@input)[i], 1)
+        html << "</div>"
+      end
+      html << "<div class=\"slot\" style=\"top: 50px; left: 202px;\">"
+      html << render_stack(block_item.instance_variable_get(:@output), block_item.instance_variable_get(:@quantity))
       html << "</div>"
-    end
-    html << "<div class=\"slot\" style=\"top: 50px; left: 202px;\">"
-    html << render_stack(block_item.instance_variable_get(:@output), block_item.instance_variable_get(:@quantity))
-    html << "</div>"
-    html << "</div>"
+      html << "</div>"
     end
     html
   end
