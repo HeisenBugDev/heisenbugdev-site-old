@@ -27,7 +27,7 @@ body {
 }
 
 a .menu-item {
-  padding: 10px;
+  padding: 2px;
   line-height: 16px;
 }
 
@@ -268,6 +268,11 @@ p a {
   max-width: 700px;
   margin: 0em 0px 2em 0em;
   font-size: 1.2em;
+}
+
+.main.menu .container {
+  width: auto;
+  padding: 0% 15%;
 }
 
 .masthead.segment h1.ui.header .sub {
