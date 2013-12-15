@@ -20,9 +20,7 @@
     %script{:type => "text/javascript", :src => url('js/semantic.min.js')}
     %script{:type => "text/javascript", :src => url('js/index.js')}
   %body
-    .ui.inverted.page.grid.masthead.segment
-      .column
-        = haml(:_header)
+    = haml(:_header)
     - if request.path.include? "wiki"
       .ui.page.grid.segment
         .stackable.ui.grid.row
