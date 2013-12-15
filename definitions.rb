@@ -97,7 +97,7 @@ module Localizations
       :quantonium_ore           => "Quantonium Ore",
       :raw_quantonium           => "Raw Quantonium",
       :crystal_quantonium       => "Crystallized Quantonium",
-      :quantumTools             => "Quantum Tools",
+      :quantum_tools             => "Quantum Tools",
       :quantumPortableCapacitor => "Quantum Portable Capacitor",
       :unbioxeniumOre           => "Unbioxenium Ore",
       :nameDatabase             => "Name Database",
