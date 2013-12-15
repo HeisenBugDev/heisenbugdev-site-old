@@ -91,6 +91,15 @@ body {
   font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.text-muted {
+  color: #999999;
+}
+.lead {
+  margin-bottom: 20px;
+  font-size: 20.099999999999998px;
+  font-weight: 200;
+  line-height: 1.4;
+}
 .ui.header,
 h1,
 h2 {
@@ -147,7 +156,7 @@ p a {
 .masthead.segment {
   background-image: url(images/bg.jpg);
   -webkit-background-size: cover;
-  background-size: cover;
+  background-size: cover;;
   margin: 0em;
   padding-top: 4rem;
   overflow: hidden;

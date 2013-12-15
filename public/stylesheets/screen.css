@@ -172,6 +172,17 @@ body {
   font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.text-muted {
+  color: #999999;
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 20.099999999999998px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
 .ui.header,
 h1,
 h2 {
