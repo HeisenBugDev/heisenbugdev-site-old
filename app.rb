@@ -6,9 +6,9 @@ require 'sinatra'
 
 # Load after Sinatra
 require 'haml'
-require_relative 'file_reader'
-require_relative 'renderers'
-require_relative 'build_handler'
+require_relative 'helpers/file_reader'
+require_relative 'helpers/renderers'
+require_relative 'helpers/build_handler'
 use Rack::Cache
 # Set Sinatra's variables
 set :app_file, __FILE__

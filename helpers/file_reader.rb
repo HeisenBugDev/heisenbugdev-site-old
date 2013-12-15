@@ -1,4 +1,4 @@
-require_relative 'definitions'
+require_relative '../config/definitions'
 module FileReader
   file_path = ""
 

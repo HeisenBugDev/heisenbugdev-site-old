@@ -92,7 +92,7 @@ module RecipesModule
 end
 
 module Wiki
-  require_relative 'definitions'
+  require_relative '../config/definitions'
 
   def render_guis(file_name)
     if File.exist?("public/images/wiki/gui#{file_name}.png")

@@ -1,4 +1,4 @@
-require_relative "renderers"
+require_relative '../helpers/renderers'
 
 #noinspection RubyLiteralArrayInspection
 module RecipeDefinitions
