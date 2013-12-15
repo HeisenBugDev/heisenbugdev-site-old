@@ -45,7 +45,7 @@ get '/stylesheets/:name.css' do
 end
 
 get '/downloads/?' do
-  if get_json('QuantumCraft')['builds'] == :error
+  if get_json('QuantumCraft') == :error
     return haml 'Cannot get builds at this time.',
                 :layout => :'layouts/application'
   end
