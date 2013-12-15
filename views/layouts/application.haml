@@ -23,7 +23,11 @@
     .ui.inverted.page.grid.masthead.segment
       .column
         = haml(:_header)
-        /- if request.path.include? "wiki"
-        /= haml(:_wiki_nav)
-    = yield
+    - if request.path.include? "wiki"
+      .ui.page.grid.segment
+        .stackable.ui.grid.row
+          = haml(:_wiki_nav)
+          = yield
+    - else
+      = yield
     = haml(:_footer)
