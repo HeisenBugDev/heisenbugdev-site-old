@@ -92,6 +92,15 @@ module RecipeDefinitions
                                                    q_plating,
                                                    q_plating,
                                                    q_plating]))
+  Recipes.new_recipe(:QDM, Crafting.new('QDM', 1, [crystal,
+                                                   hyper_c,
+                                                   crystal,
+                                                   'glass',
+                                                   'ender_pearl',
+                                                   'glass',
+                                                   q_plating,
+                                                   'machine_casing',
+                                                   q_plating]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
