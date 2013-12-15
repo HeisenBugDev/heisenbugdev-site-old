@@ -1,20 +1,8 @@
-.navbar-wrapper
-  .container
-    .navbar.navbar-inverse.navbar-static-top
-      .container
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "/"} HeisenBugDev
-        .navbar-collapse.collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => "/about"} About
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => "/wiki"} QuantumCraft Wiki
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => "/downloads"} Downloads
+.column
+  .inverted.secondary.pointing.ui.menu
+    .header.item
+      %a{:href => "/"} HeisenBugDev
+    .right.menu
+      %a.item{:href => "/about"} About
+      %a.item{:href => "/wiki"} QuantumCraft Wiki
+      %a.item{:href => "/downloads"} Downloads
