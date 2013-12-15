@@ -92,7 +92,7 @@ module RecipesModule
 end
 
 module Wiki
-  require_relative '../config/definitions'
+  require_relative 'definitions'
 
   def render_guis(file_name)
     if File.exist?("public/images/wiki/gui#{file_name}.png")
@@ -111,10 +111,7 @@ module Wiki
       if File.directory?(path)
         html << "<li class=\"nav-header\"><h3>#{Localizations::localized[base_name.to_sym]}</h3></li>"
       elsif path.include? ".qc"
-        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\"><div class=\"menu-item\">#{Localizations::localized[base_name.to_sym]}"
-        html << "<div class=\"menu-icon\" style=\"background: url(#{url("images/wiki/#{base_name}.png")});\"></div>"
-        html << "</div>"
-        html << "</a>"
+        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{Localizations::localized[base_name.to_sym]}</a></li>"
       end
     end
     html
