@@ -132,6 +132,13 @@ a {
   transition: color 0.3s ease;
 }
 
+.inverted a{
+  color: #e2e2e2;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
 a:hover {
   color: #00BAFF;
 }
