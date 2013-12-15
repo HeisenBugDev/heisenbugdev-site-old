@@ -20,6 +20,36 @@ a .menu-item {
   line-height: 16px;
 }
 
+.recipe-icon {
+  image-rendering: optimizeSpeed;
+  /* F*** SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;
+  /* Firefox                        */
+  image-rendering: -o-crisp-edges;
+  /* Opera                          */
+  image-rendering: -webkit-optimize-contrast;
+  /* Chrome (and eventually Safari) */
+  image-rendering: optimize-contrast;
+  /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE8+                           */
+}
+
+.no-aa-image {
+  image-rendering: optimizeSpeed;
+  /* F*** SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;
+  /* Firefox                        */
+  image-rendering: -o-crisp-edges;
+  /* Opera                          */
+  image-rendering: -webkit-optimize-contrast;
+  /* Chrome (and eventually Safari) */
+  image-rendering: optimize-contrast;
+  /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE8+                           */
+}
+
 /*** BLOCK AND ITEM PROPERTIES ***/
 #properties {
   height: 94px;
