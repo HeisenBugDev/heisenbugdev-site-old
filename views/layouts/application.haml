@@ -21,10 +21,9 @@
     %script{:type => "text/javascript", :src => url('js/index.js')}
   %body
     .ui.inverted.page.grid.masthead.segment
-      = haml(:_header)
-      /- if request.path.include? "wiki"
-      /= haml(:_wiki_nav)
-    .ui.page.grid.overview.segment
-      .row
-        = yield
+      .column
+        = haml(:_header)
+        /- if request.path.include? "wiki"
+        /= haml(:_wiki_nav)
+    = yield
     = haml(:_footer)

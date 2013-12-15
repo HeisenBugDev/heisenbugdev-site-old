@@ -10,6 +10,10 @@ body {
   background-color: #CFCFCF !important;
 }
 
+.block-text {
+  display: block;
+}
+
 .menu-icon {
   height: 16px;
   width: 16px;
@@ -236,11 +240,11 @@ p a {
 }
 
 .masthead.segment .information {
-  margin: 3em 1em 1em 280px;
+  margin: 3em 1em 1em 120px;
 }
 
 .masthead.segment .information p {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0em 0px 2em 0em;
   font-size: 1.2em;
 }
@@ -251,8 +255,6 @@ p a {
 
 .masthead.segment .image {
   position: absolute;
-  left: 0%;
-  bottom: -110px;
 }
 
 .overview .divided.grid .header + p {
@@ -296,13 +298,8 @@ p a {
     background-size: auto;
   }
 
-  .masthead.segment .information {
-    margin-left: 190px;
-  }
-
   .masthead.segment .image {
-    bottom: -65px;
-    width: 150px;
+    width: 100px;
   }
 
   .masthead.segment .button {
