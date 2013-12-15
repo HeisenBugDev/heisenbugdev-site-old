@@ -8,25 +8,29 @@ module RecipeDefinitions
   hyper_c   = 'hyperConductor'
   q_plating = 'quantumPlating'
   Recipes.new_recipe(:crystalQuantonium, Smelting.new("rawQuantonium",
-                                                           "crystalQuantonium", 1))
-  Recipes.new_recipe(:quantumPlating, Crafting.new('quantumPlating', 4, [ingot_unb,
-                                                                         ingot_unb,
-                                                                         ingot_unb,
-                                                                         ingot_unb,
-                                                                         crystal,
-                                                                         ingot_unb,
-                                                                         ingot_unb,
-                                                                         ingot_unb,
-                                                                         ingot_unb]))
-  Recipes.new_recipe(:hyperConductor, Crafting.new('hyperConductor', 6, ['glass',
-                                                                         'glass',
-                                                                         'glass',
-                                                                         crystal,
-                                                                         crystal,
-                                                                         crystal,
-                                                                         'glass',
-                                                                         'glass',
-                                                                         'glass']))
+                                                      "crystalQuantonium", 1))
+  Recipes.new_recipe(:quantumPlating, Crafting.new('quantumPlating',
+                                                   4,
+                                                   [ingot_unb,
+                                                    ingot_unb,
+                                                    ingot_unb,
+                                                    ingot_unb,
+                                                    crystal,
+                                                    ingot_unb,
+                                                    ingot_unb,
+                                                    ingot_unb,
+                                                    ingot_unb]))
+  Recipes.new_recipe(:hyperConductor, Crafting.new('hyperConductor',
+                                                   6,
+                                                   ['glass',
+                                                    'glass',
+                                                    'glass',
+                                                    crystal,
+                                                    crystal,
+                                                    crystal,
+                                                    'glass',
+                                                    'glass',
+                                                    'glass']))
   Recipes.new_recipe(:QFiberWire, Crafting.new('QFiberWire', 6, [q_plating,
                                                                  q_plating,
                                                                  q_plating,
@@ -54,15 +58,18 @@ module RecipeDefinitions
                                                                  q_plating,
                                                                  q_plating,
                                                                  q_plating]))
-  Recipes.new_recipe(:quantumPortableCapacitor, Crafting.new('quantumPortableCapacitor', 1, [q_plating,
-                                                                                             crystal,
-                                                                                             q_plating,
-                                                                                             hyper_c,
-                                                                                             crystal,
-                                                                                             hyper_c,
-                                                                                             q_plating,
-                                                                                             crystal,
-                                                                                             q_plating]))
+  Recipes.new_recipe(:quantumPortableCapacitor,
+                     Crafting.new('quantumPortableCapacitor',
+                                  1,
+                                  [q_plating,
+                                   crystal,
+                                   q_plating,
+                                   hyper_c,
+                                   crystal,
+                                   hyper_c,
+                                   q_plating,
+                                   crystal,
+                                   q_plating]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
