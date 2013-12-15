@@ -138,111 +138,186 @@ a.stack-link {
   text-decoration: none;
 }
 
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
-  position: relative;
-  z-index: 15;
+/*******************************
+            Global
+*******************************/
+html,
+body {
+  font-size: 15px;
+  height: 100%;
 }
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-/* Carousel base class */
-.carousel {
-  margin-bottom: 60px;
-  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-  margin-top: -90px;
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+  color: #555555;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
 }
 
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
+/*******************************
+          UI Overrides
+*******************************/
+.ui.header {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
+.ui.header,
+h1,
+h2 {
+  font-weight: normal !important;
 }
 
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
+h1.ui.header {
+  font-size: 3em;
 }
 
-/* MARKETING CONTENT
--------------------------------------------------- */
-/* Pad the edges of the mobile views a bit */
-.marketing {
-  padding-left: 15px;
-  padding-right: 15px;
+h4.ui.header,
+h5.ui.header,
+.ui.icon.header {
+  font-weight: bold !important;
 }
 
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.marketing h2 {
+.ui.button {
   font-weight: normal;
+  text-decoration: none;
 }
 
-.marketing .col-lg-4 p {
-  margin-left: 10px;
-  margin-right: 10px;
+a {
+  color: #009FDA;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-/* Featurettes
-------------------------- */
-.featurette-divider {
-  margin: 80px 0;
-  /* Space out the Bootstrap <hr> more */
+a:hover {
+  color: #00BAFF;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
+p a {
+  font-weight: bold;
 }
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
-@media (min-width: 768px) {
-  /* Remove the edge padding needed for mobile */
-  .marketing {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
-
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
+/*******************************
+            Global
+*******************************/
+.menu .right.menu > .mobile.item {
+  display: none;
 }
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
+
+.ui.page.grid.segment {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.masthead.segment {
+  background-image: url(images/bg.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin: 0em;
+  padding-top: 4rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 -20px 10px 0 rgba(0, 0, 0, 0.1) inset !important;
+  box-shadow: 0 -20px 10px 0 rgba(0, 0, 0, 0.1) inset !important;
+}
+
+.masthead.segment .column {
+  position: relative;
+}
+
+.masthead.segment .information {
+  margin: 3em 1em 1em 280px;
+}
+
+.masthead.segment .information p {
+  max-width: 600px;
+  margin: 0em 0px 2em 0em;
+  font-size: 1.2em;
+}
+
+.masthead.segment h1.ui.header .sub {
+  font-size: 0.7em;
+}
+
+.masthead.segment .image {
+  position: absolute;
+  left: 0%;
+  bottom: -110px;
+}
+
+.overview .divided.grid .header + p {
+  min-height: 100px;
+}
+
+.ui.shape .icon,
+.link.list .icon {
+  margin: 0em;
+  padding: 0em;
+}
+
+.ui.cube.shape .side {
+  background-color: transparent;
+}
+
+/*******************************
+          Responsive
+*******************************/
+/* Mobile Only */
+@media only screen and (max-width: 768px) {
+  .ui.page.grid.segment {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .menu .right.menu > .item {
+    display: none;
+  }
+
+  .menu .right.menu > .mobile.item {
+    display: block;
+  }
+
+  h1.ui.header {
+    font-size: 1.5em;
+  }
+
+  .masthead.segment {
+    -webkit-background-size: auto;
+    background-size: auto;
+  }
+
+  .masthead.segment .information {
+    margin-left: 190px;
+  }
+
+  .masthead.segment .image {
+    bottom: -65px;
+    width: 150px;
+  }
+
+  .masthead.segment .button {
+    font-size: 1rem;
+  }
+
+  .overview .divided.grid .header .icon {
+    font-size: 1.5em;
+  }
+
+  .overview .divided.grid .header + p {
+    min-height: 0px;
+  }
+
+  .masthead.segment .column {
+    font-size: 0.7rem;
+  }
+
+  .masthead.segment .column p {
+    display: none;
+  }
+
+  .selection.list .right.floated {
+    display: none;
   }
 }
