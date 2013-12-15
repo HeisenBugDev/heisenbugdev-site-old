@@ -28,14 +28,23 @@ module RecipeDefinitions
                                                                          'glass',
                                                                          'glass']))
   Recipes.new_recipe(:QFiberWire, Crafting.new('QFiberWire', 6, [q_plating,
-                                                               q_plating,
-                                                               q_plating,
-                                                               hyper_c,
-                                                               hyper_c,
-                                                               hyper_c,
-                                                               q_plating,
-                                                               q_plating,
-                                                               q_plating]))
+                                                                 q_plating,
+                                                                 q_plating,
+                                                                 hyper_c,
+                                                                 hyper_c,
+                                                                 hyper_c,
+                                                                 q_plating,
+                                                                 q_plating,
+                                                                 q_plating]))
+  Recipes.new_recipe(:multiTool, Crafting.new('multiTool', 1, ['',
+                                                               ingot_unb,
+                                                               '',
+                                                               'dye',
+                                                               ingot_unb,
+                                                               ingot_unb,
+                                                               '',
+                                                               'dye',
+                                                               '']))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
