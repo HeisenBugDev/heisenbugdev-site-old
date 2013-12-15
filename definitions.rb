@@ -7,7 +7,7 @@ module RecipeDefinitions
   ingot_unb = 'ingotUnbioxenium'
   hyper_c   = 'hyperConductor'
   q_plating = 'quantumPlating'
-  Recipes.new_recipe(:crystallizedQuantonium, Smelting.new("rawQuantonium",
+  Recipes.new_recipe(:crystalQuantonium, Smelting.new("rawQuantonium",
                                                            "crystalQuantonium", 1))
   Recipes.new_recipe(:quantumPlating, Crafting.new('quantumPlating', 4, [ingot_unb,
                                                                          ingot_unb,
