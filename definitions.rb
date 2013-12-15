@@ -95,7 +95,7 @@ module Localizations
       :index                    => "Home",
       :machines                 => "Machines",
       :quantonium_ore           => "Quantonium Ore",
-      :rawQuantonium            => "Raw Quantonium",
+      :raw_quantonium            => "Raw Quantonium",
       :crystalQuantonium        => "Crystallized Quantonium",
       :quantumTools             => "Quantum Tools",
       :quantumPortableCapacitor => "Quantum Portable Capacitor",
