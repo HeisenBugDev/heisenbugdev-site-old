@@ -83,6 +83,15 @@ module RecipeDefinitions
                                                     q_plating,
                                                     q_plating,
                                                     q_plating]))
+  Recipes.new_recipe(:QDE, Crafting.new('QDE', 1, [q_plating,
+                                                   crystal,
+                                                   q_plating,
+                                                   hyper_c,
+                                                   'machine_casing',
+                                                   hyper_c,
+                                                   q_plating,
+                                                   q_plating,
+                                                   q_plating]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
