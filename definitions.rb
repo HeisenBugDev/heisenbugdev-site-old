@@ -70,6 +70,17 @@ module RecipeDefinitions
                                    q_plating,
                                    crystal,
                                    q_plating]))
+  Recipes.new_recipe(:machineCasing, Crafting.new('machineCasing',
+                                                  1,
+                                                  [q_plating,
+                                                   q_plating,
+                                                   q_plating,
+                                                   q_plating,
+                                                   '',
+                                                   q_plating,
+                                                   q_plating,
+                                                   q_plating,
+                                                   q_plating]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
@@ -94,6 +105,7 @@ module Localizations
       hyperConductor:           "Hyper Conductor",
       QFiberWire:               "Quantum Fiber Wire",
       upgrades:                 "Upgrades",
+      machineCasing:            "Quantum Machine Casing",
       :QDE                      => "Quantum De-Energizer",
       :QEI                      => "Quantum Energy Injector",
       :QEE                      => "Quantum Energy Extractor",
