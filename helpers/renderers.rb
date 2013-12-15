@@ -109,11 +109,13 @@ module Wiki
     files.each_with_index do |path, i|
       base_name = File.basename(path, File.extname(path))
       if File.directory?(path)
-        html << "<li class=\"nav-header\"><h3>#{Localizations::localized[base_name.to_sym]}</h3></li>"
+        html << "<div class=\"item menu\"><b>#{Localizations::localized[base_name.to_sym]}</b></div>"
       elsif path.include? ".qc"
-        html << "<li><a href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\"><div class=\"menu-item\">#{Localizations::localized[base_name.to_sym]}"
+        html << "<a class=\"item\" href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{Localizations::localized[base_name.to_sym]}"
+        if Localizations::beta[base_name.to_sym] != nil
+          html << "<span class=\"ui red label\">Beta</span>"
+        end
         html << "<div class=\"menu-icon\" style=\"background: url(#{url("images/wiki/#{base_name}.png")});\"></div>"
-        html << "</div>"
         html << "</a>"
       end
     end

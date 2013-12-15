@@ -9,18 +9,23 @@
 
       ga('create', 'UA-46421630-1', 'heisenbugdev.com');
       ga('send', 'pageview');;
-    %link{:href=> url("stylesheets/bootstrap.css"), :rel => 'stylesheet', :media => "screen", :type => "text/css"}
-    /%link{:href=>'stylesheets/bootstrap-theme.css', :rel => 'stylesheet', :media => "screen", :type => "text/css"}
+    / %link{:href=> url("stylesheets/bootstrap.css"), :rel => 'stylesheet', :media => "screen", :type => "text/css"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href=> url('stylesheets/semantic.css'), :rel => 'stylesheet', :media => "screen", :type => "text/css"}
     %link{:href=> url('stylesheets/screen.css'), :rel => 'stylesheet', :media => "screen", :type => "text/css"}  
     %link{:href=> url("favicon.png"), :rel => "icon", :type => "image/png"}
     %title HeisenBugDev
 
-    %script{:type => "text/javascript", :src => url("js/bootstrap.min.js")}
+    /%script{:type => "text/javascript", :src => url("js/bootstrap.min.js")}
+    %script{:type => "text/javascript", :src => url('js/semantic.min.js')}
+    %script{:type => "text/javascript", :src => url('js/index.js')}
   %body
     = haml(:_header)
-    .container
-      .row
-        - if request.path.include? "wiki"
+    - if request.path.include? "wiki"
+      .ui.page.grid.segment
+        .stackable.ui.grid.row
           = haml(:_wiki_nav)
-        = yield
+          = yield
+    - else
+      = yield
     = haml(:_footer)
