@@ -5,6 +5,8 @@ module RecipeDefinitions
   include RecipesModule
   crystal   = 'crystalQuantonium'
   ingot_unb = 'ingotUnbioxenium'
+  hyper_c   = 'hyperConductor'
+  q_plating = 'quantumPlating'
   Recipes.new_recipe(:crystallizedQuantonium, Smelting.new("rawQuantonium",
                                                            "crystalQuantonium", 1))
   Recipes.new_recipe(:quantumPlating, Crafting.new('quantumPlating', 4, [ingot_unb,
@@ -25,6 +27,15 @@ module RecipeDefinitions
                                                                          'glass',
                                                                          'glass',
                                                                          'glass']))
+  Recipes.new_recipe(:QFiberWire, Crafting.new('QFiberWire', 6, [q_plating,
+                                                               q_plating,
+                                                               q_plating,
+                                                               hyper_c,
+                                                               hyper_c,
+                                                               hyper_c,
+                                                               q_plating,
+                                                               q_plating,
+                                                               q_plating]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
@@ -47,6 +58,7 @@ module Localizations
       nameDatabase:             "Name Database",
       quantumPlating:           "Quantum Plating",
       hyperConductor:           "Hyper Conductor",
+      QFiberWire:               "Quantum Fiber Wire",
       :QDE                      => "Quantum De-Energizer",
       :QEI                      => "Quantum Energy Injector",
       :QEE                      => "Quantum Energy Extractor",

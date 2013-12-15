@@ -1,0 +1,1 @@
+Quantum Fiber Wire is the block used to get energy between machines other than directly placing them next to each other. There are no special sides on this, just place it down on any side of a machine, connect to another, and let the power flow!
