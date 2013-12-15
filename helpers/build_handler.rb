@@ -14,7 +14,7 @@ module BuildHandler
       request  = Net::HTTP::Get.new("/job/#{job}/#{build}/api/json")
       response = http.request(request)
       JSON.parse(response.body)
-    rescue SocketError
+    rescue SocketError, Errno::ENETUNREACH
       :error
     end
   end
