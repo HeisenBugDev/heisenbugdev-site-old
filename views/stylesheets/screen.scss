@@ -4,7 +4,11 @@
 
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
+  background-color: #5a5a5a;
+}
+
+.light-gray{
+ background-color: #CFCFCF !important;
 }
 
 .menu-icon {
@@ -105,8 +109,12 @@ h5.ui.header,
   text-decoration: none;
 }
 
+.copyright{
+  color: #333333;
+}
+
 a {
-  color: #009FDA;
+  color: #333333;
   text-decoration: none;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
