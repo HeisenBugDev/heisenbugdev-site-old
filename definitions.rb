@@ -54,6 +54,15 @@ module RecipeDefinitions
                                                                  q_plating,
                                                                  q_plating,
                                                                  q_plating]))
+  Recipes.new_recipe(:quantumPortableCapacitor, Crafting.new('quantumPortableCapacitor', 1, [q_plating,
+                                                                                             crystal,
+                                                                                             q_plating,
+                                                                                             hyper_c,
+                                                                                             crystal,
+                                                                                             hyper_c,
+                                                                                             q_plating,
+                                                                                             crystal,
+                                                                                             q_plating]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
@@ -71,7 +80,7 @@ module Localizations
       rawQuantonium:            "Raw Quantonium",
       crystalQuantonium:        "Crystallized Quantonium",
       quantumTools:             "Quantum Tools",
-      quantumPortableCapicator: "Quantum Portable Capicator",
+      quantumPortableCapacitor: "Quantum Portable Capacitor",
       unbioxeniumOre:           "Unbioxenium Ore",
       nameDatabase:             "Name Database",
       quantumPlating:           "Quantum Plating",
