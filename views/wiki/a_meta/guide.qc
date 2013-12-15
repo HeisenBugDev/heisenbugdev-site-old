@@ -20,4 +20,4 @@ Once you get back into the game you will see a few new things, the biggest one b
 
 You’ll also notice a few other items and blocks. Most of them are useless as we haven’t finished them and are only stubs but there is one extra block that may be fun. That block is called the Quantum Energy Sucker. Guess what it does? It sucks energy, eating it up as fast a possible. As you may guess it is not craftable so you will have to cheat it in, but it is still a fun prank to play on your friend.
 
-Head over to the Minecraft Forum post and give some feedback on how it is and what you want next. I have been told that there are a few more things planned to be added that will blow your mind.
+Head over to the Minecraft Forum Post and give some feedback on how it is and what you want next. I have been told that there are a few more things planned to be added that will blow your mind.
