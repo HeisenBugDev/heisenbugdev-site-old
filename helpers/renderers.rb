@@ -109,7 +109,7 @@ module Wiki
     files.each_with_index do |path, i|
       base_name = File.basename(path, File.extname(path))
       if File.directory?(path)
-        html << "<div class=\"item menu\">#{Localizations::localized[base_name.to_sym]}</div>"
+        html << "<div class=\"item menu\"><b>#{Localizations::localized[base_name.to_sym]}</b></div>"
       elsif path.include? ".qc"
         html << "<a class=\"item\" href = \"#{url(path.gsub("views/", "").gsub(".qc", ""))}\">#{Localizations::localized[base_name.to_sym]}"
         html << "<div class=\"menu-icon\" style=\"background: url(#{url("images/wiki/#{base_name}.png")});\"></div>"
