@@ -49,22 +49,7 @@ get '/downloads/?' do
     return haml 'Cannot get builds at this time.',
                 :layout => :'layouts/application'
   end
-  @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
-  @json = []
-  @names.each do |name|
-    @json << get_json(name)
-  end
-  etag @json.hash
-  @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
-  @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
-  @descriptions = ['These are the most stable builds, you should start with t'\
-                  'hese.', 'You\'re living on the edge, a tech guru, someone '\
-                  'who will deal with bugs (and report them). These are highl'\
-                  'y likely to break and cause problems. Use at your own risk',
-                  'You need this to play QuantumCraft and any other mods that'\
-                  ' are/will be here.']
-  @files        = []
-  @numbers      = []
+
   haml :downloads, :layout => :'layouts/application'
 end
 
