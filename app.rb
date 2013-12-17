@@ -9,6 +9,7 @@ require 'haml'
 require_relative 'helpers/file_reader'
 require_relative 'helpers/renderers'
 require_relative 'helpers/build_handler'
+require_relative 'config/definitions'
 use Rack::Cache
 # Set Sinatra's variables
 set :app_file, __FILE__
@@ -49,7 +50,12 @@ get '/downloads/?' do
     return haml 'Cannot get builds at this time.',
                 :layout => :'layouts/application'
   end
-
+  @names = DownloadsManager.names
+  @file_names = DownloadsManager.file_names
+  @repo_orgs = DownloadsManager.repo_orgs
+  @descriptions = DownloadsManager.descriptions
+  @files = DownloadsManager.files
+  @numbers = DownloadsManager.numbers
   haml :downloads, :layout => :'layouts/application'
 end
 
