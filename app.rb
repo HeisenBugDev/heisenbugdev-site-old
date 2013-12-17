@@ -9,7 +9,7 @@ require 'haml'
 require 'sidekiq'
 require 'sidetiq'
 require 'redis'
-$redis = Redis.new
+require 'json'
 require_relative 'config/definitions'
 
 require_relative 'helpers/file_reader'
@@ -27,6 +27,7 @@ set :haml, { :format => :html5 }
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root,
                                               'config.rb'))
+  REDIS = Redis.new
 end
 configure :production do
   require 'newrelic_rpm'
@@ -60,10 +61,9 @@ get '/downloads/?' do
   @file_names = DownloadsManager.file_names
   @repo_orgs = DownloadsManager.repo_orgs
   @descriptions = DownloadsManager.descriptions
-  @files = DownloadsManager.files
-  puts "files is #{DownloadsManager.files}"
-  @numbers = DownloadsManager.numbers
-  @file_info = DownloadsManager.file_info
+  @files = JSON.parse(REDIS.get('files'))
+  @numbers = JSON.parse(REDIS.get('numbers'))
+  @file_info = JSON.parse(REDIS.get('file_info'))
   haml :downloads, :layout => :'layouts/application'
 end
 
