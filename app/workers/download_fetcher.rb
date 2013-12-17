@@ -2,9 +2,13 @@ require_relative '../../helpers/build_handler'
 require_relative '../../config/definitions'
 class DownloadFetcher
   include Sidekiq::Worker
+  include Sidetiq::Schedulable
   include BuildHandler
 
+  recurrence { minutely }
+
   def perform
+    puts "I am performing!"
     DownloadsManager.numbers = []
     DownloadsManager.files   = []
     DownloadsManager.names.each_with_index do |name, name_index|
@@ -26,3 +30,5 @@ class DownloadFetcher
     end
   end
 end
+
+DownloadFetcher.perform_async
