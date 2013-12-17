@@ -1,20 +1,27 @@
 require_relative '../../helpers/build_handler'
 require_relative '../../config/definitions'
+require 'json'
 class DownloadFetcher
   include Sidekiq::Worker
   include Sidetiq::Schedulable
   include BuildHandler
 
+  class << self
+    attr_accessor :files
+    attr_accessor :numbers
+    attr_accessor :file_info
+  end
+
   recurrence { minutely }
 
   def perform
     puts "I am performing!"
-    DownloadsManager.numbers = []
-    DownloadsManager.files   = []
-    file_info_builder        = []
-    numbers_builder          = []
-    files_builder            = []
-    file_names               = DownloadsManager.file_names
+    self.class.numbers = []
+    self.class.files   = []
+    file_info_builder  = []
+    numbers_builder    = []
+    files_builder      = []
+    file_names         = DownloadsManager.file_names
     DownloadsManager.names.each_with_index do |name, name_index|
       tmp_numbers = []
       tmp_files   = []
@@ -37,10 +44,12 @@ class DownloadFetcher
       end
       file_info_builder << files_info
     end
-    DownloadsManager.file_info = file_info_builder
-    DownloadsManager.numbers   = numbers_builder
-    DownloadsManager.files= files_builder
-    DownloadsManager.files = [1,2,3,4]
+    REDIS.set('file_info', file_info_builder.to_json)
+    REDIS.set('numbers', numbers_builder.to_json)
+    REDIS.set('files', files_builder.to_json)
+    self.class.file_info = file_info_builder
+    self.class.numbers   = numbers_builder
+    self.class.files     = files_builder
   end
 end
 
