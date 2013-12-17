@@ -1,12 +1,15 @@
 require_relative '../helpers/renderers'
 
-module Downloads
-  attr_accessor :names
-  attr_accessor :file_names
-  attr_accessor :repo_orgs
-  attr_accessor :descriptions
-  attr_accessor :files
-  attr_accessor :numbers
+class DownloadsManager
+  class << self
+    attr_reader :names
+    attr_reader :file_names
+    attr_reader :repo_orgs
+    attr_reader :descriptions
+    attr_reader :files
+    attr_reader :numbers
+  end
+
   @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
   @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
   @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
@@ -138,11 +141,11 @@ end
 
 module Localizations
   @@wiki_files = Dir["views/wiki/**/*.qc"]
-  @@beta = {
-    :QDS => true
+  @@beta       = {
+      :QDS => true
   }
 
-  @@localized  = {
+  @@localized = {
       :a_meta                     => "Meta",
       :blocks                     => "Blocks",
       :items                      => "Items",
