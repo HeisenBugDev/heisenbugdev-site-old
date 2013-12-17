@@ -6,9 +6,6 @@ class DownloadsManager
     attr_reader :file_names
     attr_reader :repo_orgs
     attr_reader :descriptions
-    attr_accessor :files
-    attr_accessor :numbers
-    attr_accessor :file_info
   end
 
   @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
@@ -20,9 +17,6 @@ class DownloadsManager
                   'y likely to break and cause problems. Use at your own risk',
                    'You need this to play QuantumCraft and any other mods that'\
                   ' are/will be here.']
-  @files        = []
-  @numbers      = []
-  @file_info    = []
 end
 
 #noinspection RubyLiteralArrayInspection
