@@ -6,17 +6,22 @@ require 'sinatra'
 
 # Load after Sinatra
 require 'haml'
+require 'sidekiq'
+require 'sidetiq'
+require 'redis'
+$redis = Redis.new
 require_relative 'helpers/file_reader'
 require_relative 'helpers/renderers'
 require_relative 'helpers/build_handler'
 require_relative 'config/definitions'
+require_relative 'app/workers/download_fetcher'
 use Rack::Cache
 # Set Sinatra's variables
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
 set :views, 'views'
 set :haml, { :format => :html5 }
-
+DownloadFetcher.perform_async
 # Configure Compass
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root,
