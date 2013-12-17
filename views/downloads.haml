@@ -26,22 +26,21 @@
               %th Download
               %th Changelog
           %tbody
-            - puts @files
             - @files[name_index].each_with_index do |file, index|
               %tr
                 %td
-                  = @file_info[name_index][index][:version]
+                  = @file_info[name_index][index]['version']
                 %td
-                  = @file_info[name_index][index][:mc_version]
+                  = @file_info[name_index][index]['mc_version']
                 %td
                   - file.each_with_index do |a_file, i|
-                    %a.ui.tiny.button.animated.fade{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[index]}/artifact/build/libs/#{a_file['fileName']}"}
+                    %a.ui.tiny.button.animated.fade{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[name_index][index]}/artifact/build/libs/#{a_file['fileName']}"}
                       .visible.content
-                        = @file_info[name_index][index][:types][i]
+                        = @file_info[name_index][index]['types'][i]
                       .hidden.content
                         Click
                 %td
-                  %a.ui.animated{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[index]}/changes"}
+                  %a.ui.animated{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[name_index][index]}/changes"}
                     %i
                       Detailed Changelog
 
