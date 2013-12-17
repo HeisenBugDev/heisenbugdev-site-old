@@ -1,5 +1,24 @@
 require_relative '../helpers/renderers'
 
+class DownloadsManager
+  class << self
+    attr_reader :names
+    attr_reader :file_names
+    attr_reader :repo_orgs
+    attr_reader :descriptions
+  end
+
+  @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
+  @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
+  @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
+  @descriptions = ['These are the most stable builds, you should start with t'\
+                  'hese.', 'You\'re living on the edge, a tech guru, someone '\
+                  'who will deal with bugs (and report them). These are highl'\
+                  'y likely to break and cause problems. Use at your own risk',
+                   'You need this to play QuantumCraft and any other mods that'\
+                  ' are/will be here.']
+end
+
 #noinspection RubyLiteralArrayInspection
 module RecipeDefinitions
   include RecipesModule
@@ -118,11 +137,11 @@ end
 
 module Localizations
   @@wiki_files = Dir["views/wiki/**/*.qc"]
-  @@beta = {
-    :QDS => true
+  @@beta       = {
+      :QDS => true
   }
 
-  @@localized  = {
+  @@localized = {
       :a_meta                     => "Meta",
       :blocks                     => "Blocks",
       :items                      => "Items",

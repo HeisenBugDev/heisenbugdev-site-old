@@ -6,22 +6,31 @@ require 'sinatra'
 
 # Load after Sinatra
 require 'haml'
+require 'sidekiq'
+require 'sidetiq'
+require 'redis'
+require 'json'
+require_relative 'config/definitions'
+
 require_relative 'helpers/file_reader'
 require_relative 'helpers/renderers'
 require_relative 'helpers/build_handler'
+require_relative 'app/workers/download_fetcher'
+
 use Rack::Cache
 # Set Sinatra's variables
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
 set :views, 'views'
 set :haml, { :format => :html5 }
-
 # Configure Compass
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root,
                                               'config.rb'))
+  redis_uri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
+  uri = URI.parse(redis_uri)
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 end
-
 configure :production do
   require 'newrelic_rpm'
 end
@@ -36,6 +45,7 @@ end
 before do
   expires 60, :public, :must_revalidate
 end
+DownloadFetcher.perform_async
 
 # At a minimum the main sass file must reside within the views directory
 # We create /views/stylesheets where all our sass files can safely reside
@@ -49,22 +59,13 @@ get '/downloads/?' do
     return haml 'Cannot get builds at this time.',
                 :layout => :'layouts/application'
   end
-  @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
-  @json = []
-  @names.each do |name|
-    @json << get_json(name)
-  end
-  etag @json.hash
-  @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
-  @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
-  @descriptions = ['These are the most stable builds, you should start with t'\
-                  'hese.', 'You\'re living on the edge, a tech guru, someone '\
-                  'who will deal with bugs (and report them). These are highl'\
-                  'y likely to break and cause problems. Use at your own risk',
-                  'You need this to play QuantumCraft and any other mods that'\
-                  ' are/will be here.']
-  @files        = []
-  @numbers      = []
+  @names = DownloadsManager.names
+  @file_names = DownloadsManager.file_names
+  @repo_orgs = DownloadsManager.repo_orgs
+  @descriptions = DownloadsManager.descriptions
+  @files = JSON.parse(REDIS.get('files'))
+  @numbers = JSON.parse(REDIS.get('numbers'))
+  @file_info = JSON.parse(REDIS.get('file_info'))
   haml :downloads, :layout => :'layouts/application'
 end
 
