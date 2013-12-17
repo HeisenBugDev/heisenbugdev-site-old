@@ -27,7 +27,9 @@ set :haml, { :format => :html5 }
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root,
                                               'config.rb'))
-  REDIS = Redis.new
+  redis_uri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
+  uri = URI.parse(redis_uri)
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 end
 configure :production do
   require 'newrelic_rpm'
