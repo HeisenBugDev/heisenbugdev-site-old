@@ -10,24 +10,24 @@ require 'sidekiq'
 require 'sidetiq'
 require 'redis'
 $redis = Redis.new
+require_relative 'config/definitions'
+
 require_relative 'helpers/file_reader'
 require_relative 'helpers/renderers'
 require_relative 'helpers/build_handler'
-require_relative 'config/definitions'
 require_relative 'app/workers/download_fetcher'
+
 use Rack::Cache
 # Set Sinatra's variables
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
 set :views, 'views'
 set :haml, { :format => :html5 }
-DownloadFetcher.perform_async
 # Configure Compass
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root,
                                               'config.rb'))
 end
-
 configure :production do
   require 'newrelic_rpm'
 end
@@ -42,6 +42,7 @@ end
 before do
   expires 60, :public, :must_revalidate
 end
+DownloadFetcher.perform_async
 
 # At a minimum the main sass file must reside within the views directory
 # We create /views/stylesheets where all our sass files can safely reside
@@ -60,7 +61,9 @@ get '/downloads/?' do
   @repo_orgs = DownloadsManager.repo_orgs
   @descriptions = DownloadsManager.descriptions
   @files = DownloadsManager.files
+  puts "files is #{DownloadsManager.files}"
   @numbers = DownloadsManager.numbers
+  @file_info = DownloadsManager.file_info
   haml :downloads, :layout => :'layouts/application'
 end
 
