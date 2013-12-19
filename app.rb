@@ -19,6 +19,8 @@ require_relative 'helpers/build_handler'
 require_relative 'app/workers/download_fetcher'
 
 use Rack::Cache
+use Rack::Deflater
+
 # Set Sinatra's variables
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
