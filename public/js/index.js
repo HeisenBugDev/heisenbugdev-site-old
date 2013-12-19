@@ -1,7 +1,5 @@
 window.onload = (function () {
     $('.no-aa-image').each(function (i,img) {
-        console.log("hihihihihi");
-        console.log(img);
         var canvas = document.createElement('canvas');
         canvas.width = img.width;
         canvas.height = img.height;
