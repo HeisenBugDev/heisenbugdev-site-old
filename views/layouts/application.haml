@@ -11,7 +11,7 @@
       ga('send', 'pageview');;
     %link{:href=> url("favicon.png"), :rel => "icon", :type => "image/png"}
     %title HeisenBugDev
-    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"}
+    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
   %body
     = haml(:_header)
     - if request.path.include? "wiki"
