@@ -44,7 +44,7 @@ module RecipesModule
     html = ""
 
     # html << "<a href=\"#{link}\" class=\"stack-link\">"; # Not done, still need to change that for things
-    html << "<div class=\"recipe-icon\" style=\"background: url(#{url("images/wiki/#{blockitem}.png")});\" title=\"#{blockitem}\">#{size}</div>"
+    html << "<div class=\"recipe-icon-text\" title=\"#{blockitem}\"><img class=\"recipe-icon no-aa-image\" src=\"#{url("images/wiki/#{blockitem}.png")}\"></img>#{size}</div>"
     # html << "</a>";
   end
 

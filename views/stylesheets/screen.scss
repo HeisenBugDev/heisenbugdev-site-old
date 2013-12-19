@@ -32,14 +32,6 @@ a .menu-item {
   line-height: 16px;
 }
 
-.recipe-icon{
-  image-rendering: optimizeSpeed;             /* F*** SMOOTHING, GIVE ME SPEED  */
-  image-rendering: -moz-crisp-edges;          /* Firefox                        */
-  image-rendering: -o-crisp-edges;            /* Opera                          */
-  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
-}
 .no-aa-image{
   image-rendering: optimizeSpeed;             /* F*** SMOOTHING, GIVE ME SPEED  */
   image-rendering: -moz-crisp-edges;          /* Firefox                        */
@@ -64,6 +56,7 @@ a .menu-item {
 .recipe-divider{ height: 30px; line-height: 30px; font-size: 16px; padding-left: 10px; margin-top: 20px; border-top: 1px solid #888; border-bottom: 1px dotted #888; }
 .recipe-divider:first-child{ margin-top: 0px !important; border-top: none !important; }
 .recipe-icon{ background-size: 32px 32px !important; height: 32px; width: 32px; text-align: right; line-height: 50px; color: #fff; font-weight: bold; }
+.recipe-icon-text{ line-height: 50px; color: #fff; font-weight: bold; }
 .slot{ position: absolute; }
 a.stack-link{ text-decoration: none; }
 

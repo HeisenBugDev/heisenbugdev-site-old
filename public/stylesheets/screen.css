@@ -31,21 +31,6 @@ a .menu-item {
   line-height: 16px;
 }
 
-.recipe-icon {
-  image-rendering: optimizeSpeed;
-  /* F*** SMOOTHING, GIVE ME SPEED  */
-  image-rendering: -moz-crisp-edges;
-  /* Firefox                        */
-  image-rendering: -o-crisp-edges;
-  /* Opera                          */
-  image-rendering: -webkit-optimize-contrast;
-  /* Chrome (and eventually Safari) */
-  image-rendering: optimize-contrast;
-  /* CSS3 Proposed                  */
-  -ms-interpolation-mode: nearest-neighbor;
-  /* IE8+                           */
-}
-
 .no-aa-image {
   image-rendering: optimizeSpeed;
   /* F*** SMOOTHING, GIVE ME SPEED  */
@@ -135,6 +120,13 @@ a .menu-item {
   background-size: 32px 32px !important;
   height: 32px;
   width: 32px;
+  text-align: right;
+  line-height: 50px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.recipe-icon-text {
   text-align: right;
   line-height: 50px;
   color: #fff;
