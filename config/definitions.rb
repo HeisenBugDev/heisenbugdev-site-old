@@ -140,6 +140,8 @@ module RecipeDefinitions
                                                    q_plating,
                                                    q_plating,
                                                    q_plating]))
+  Recipes.new_recipe(:QEL, Crafting.new('QEL', 1, ['QDL']))
+  Recipes.new_recipe(:QDL, Crafting.new('QDL', 1, ['QEL']))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
