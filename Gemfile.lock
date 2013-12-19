@@ -13,6 +13,7 @@ GEM
     haml (4.0.3)
       tilt
     ice_cube (0.11.1)
+    jsmin (1.0.1)
     json (1.8.1)
     kgio (2.8.1)
     newrelic_rpm (3.7.0.177)
@@ -21,6 +22,8 @@ GEM
       rack (>= 0.4)
     rack-protection (1.5.0)
       rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
     raindrops (0.12.0)
     redis (3.0.6)
     redis-namespace (1.4.1)
@@ -40,6 +43,11 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-assetpack (0.3.1)
+      jsmin
+      rack-test
+      sinatra
+      tilt (>= 1.3.0)
     tilt (1.4.1)
     timers (1.1.0)
     unicorn (4.7.0)
@@ -58,4 +66,5 @@ DEPENDENCIES
   sidekiq (~> 2.17.1)
   sidetiq (~> 0.5.0)
   sinatra
+  sinatra-assetpack (~> 0.3.1)
   unicorn (~> 4.7.0)

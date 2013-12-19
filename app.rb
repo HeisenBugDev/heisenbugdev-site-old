@@ -3,6 +3,7 @@ require 'compass'
 require 'rack/cache'
 # Sinatra!
 require 'sinatra'
+require 'sinatra/assetpack'
 
 # Load after Sinatra
 require 'haml'
@@ -23,6 +24,28 @@ set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
 set :views, 'views'
 set :haml, { :format => :html5 }
+
+register Sinatra::AssetPack
+
+assets {
+  serve '/js',     from: 'app/js'        # Default
+  serve '/css',    from: 'app/css'       # Default
+  #serve '/images', from: 'app/images'    # Default
+
+  # The second parameter defines where the compressed version will be served.
+  # (Note: that parameter is optional, AssetPack will figure it out.)
+  js :app, '/js/app.js', [
+      '/js/**'
+  ]
+
+  css :application, '/css/application.css', [
+      '/css/**'
+  ]
+
+  js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
+  css_compression :simple   # :simple | :sass | :yui | :sqwish
+}
+
 # Configure Compass
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root,
