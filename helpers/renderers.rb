@@ -43,9 +43,10 @@ module RecipesModule
     end
     html = ""
 
-    # html << "<a href=\"#{link}\" class=\"stack-link\">"; # Not done, still need to change that for things
-    html << "<div class=\"recipe-icon-text\" title=\"#{blockitem}\"><img class=\"recipe-icon no-aa-image\" src=\"#{url("images/wiki/#{blockitem}.png")}\"></img>#{size}</div>"
-    # html << "</a>";
+    if File.exist?("public/images/wiki/#{blockitem}.png")
+      html << "<div class=\"recipe-icon-text\" title=\"#{blockitem}\"><img class=\"recipe-icon no-aa-image\" src=\"#{url("images/wiki/#{blockitem}.png")}\"></img>#{size}</div>"
+    end
+    html
   end
 
   def render_smelting(blockitem)
