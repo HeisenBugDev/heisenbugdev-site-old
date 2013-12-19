@@ -116,7 +116,9 @@ module Wiki
         if Localizations::beta[base_name.to_sym] != nil
           html << "<span class=\"ui red label\">Beta</span>"
         end
-        html << "<div class=\"menu-icon\" style=\"background: url(#{url("images/wiki/#{base_name}.png")});\"></div>"
+        if File.exist?("public/images/wiki/#{base_name}.png")
+          html << "<div class=\"menu-icon\" style=\"background: url(#{url("images/wiki/#{base_name}.png")});\"></div>"
+        end
         html << "</a>"
       end
     end
