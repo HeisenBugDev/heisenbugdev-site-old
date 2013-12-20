@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $('.no-aa-image').each(function (i,img) {
+window.onload = (function () {
+    $('.no-aa-image').each(function (i, img) {
         var canvas = document.createElement('canvas');
         canvas.width = img.width;
         canvas.height = img.height;
@@ -13,6 +13,9 @@ $(document).ready(function () {
         //$(img).replaceWith(canvas);
     });
     $('.recipe-icon-text')
-        .popup()
+        .popup({
+            delay: 0,
+            duration: 70
+        })
     ;
 });
