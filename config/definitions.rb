@@ -169,6 +169,15 @@ module RecipeDefinitions
                                                    hyper_c,
                                                    ingot_unb,
                                                    hyper_c]))
+  Recipes.new_recipe(:IOH, Crafting.new('IOH', 1, [ingot_unb,
+                                                   ingot_unb,
+                                                   ingot_unb,
+                                                   q_plating,
+                                                   'machine_casing',
+                                                   q_plating,
+                                                   hyper_c,
+                                                   hyper_c,
+                                                   hyper_c]))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
