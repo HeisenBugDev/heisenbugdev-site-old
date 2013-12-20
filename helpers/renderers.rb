@@ -38,13 +38,14 @@ module RecipesModule
   end
 
   def render_stack(blockitem, size)
+    require_relative '../config/definitions'
     if size < 2
       size = nil
     end
     html = ""
 
     if File.exist?("public/images/wiki/#{blockitem}.png")
-      html << "<div class=\"recipe-icon-text\" title=\"#{blockitem}\"><img class=\"recipe-icon no-aa-image\" src=\"#{url("images/wiki/#{blockitem}.png")}\"></img>#{size}</div>"
+      html << "<div class=\"recipe-icon-text\" data-content=\"#{Localizations::localized[blockitem.to_sym]}\"><img class=\"recipe-icon no-aa-image\" src=\"#{url("images/wiki/#{blockitem}.png")}\"></img>#{size}</div>"
     end
     html
   end
