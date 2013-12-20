@@ -178,6 +178,26 @@ module RecipeDefinitions
                                                    hyper_c,
                                                    hyper_c,
                                                    hyper_c]))
+  Recipes.new_recipe(:QCP, Crafting.new('Capacitor1', 1, [hyper_c,
+                                                          q_plating,
+                                                          hyper_c,
+                                                          hyper_c,
+                                                          'machine_casing',
+                                                          hyper_c,
+                                                          hyper_c,
+                                                          q_plating,
+                                                          hyper_c]))
+  4.times do |capacitor|
+    Recipes.new_recipe(:QCP, Crafting.new("Capacitor#{capacitor + 2}", 1, ["Capacitor#{capacitor + 1}",
+                                                                           q_plating,
+                                                                           "Capacitor#{capacitor + 1}",
+                                                                           hyper_c,
+                                                                           'machine_casing',
+                                                                           hyper_c,
+                                                                           "Capacitor#{capacitor + 1}",
+                                                                           q_plating,
+                                                                           "Capacitor#{capacitor + 1}"]))
+  end
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
