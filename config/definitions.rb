@@ -242,7 +242,12 @@ module Localizations
       :A_general                  => "General",
       :multi_tool                 => "Multi Tool",
       :guide                      => "Getting Started",
-      :mc_forum_post              => "Minecraft Forum Post"
+      :mc_forum_post              => "Minecraft Forum Post",
+      :Capacitor1                 => "Quantum Basic Capacitor",
+      :Capacitor2                 => "Quantum Advanced Capacitor",
+      :Capacitor3                 => "Quantum Super Capacitor",
+      :Capacitor4                 => "Quantum Ultra Capacitor",
+      :Capacitor5                 => "Quantum Insane Capacitor"
   }
 
   def self.localized
