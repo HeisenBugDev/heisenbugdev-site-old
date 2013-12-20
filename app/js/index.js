@@ -1,4 +1,4 @@
-window.onload = (function () {
+$(document).ready(function () {
     $('.no-aa-image').each(function (i,img) {
         var canvas = document.createElement('canvas');
         canvas.width = img.width;
@@ -12,4 +12,7 @@ window.onload = (function () {
         $(img)[0].parentNode.replaceChild(canvas, $(img)[0]);
         //$(img).replaceWith(canvas);
     });
+    $('.recipe-icon-text')
+        .popup()
+    ;
 });
