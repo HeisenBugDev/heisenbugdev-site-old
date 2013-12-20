@@ -247,7 +247,16 @@ module Localizations
       :Capacitor2                 => 'Quantum Advanced Capacitor',
       :Capacitor3                 => 'Quantum Super Capacitor',
       :Capacitor4                 => 'Quantum Ultra Capacitor',
-      :Capacitor5                 => 'Quantum Insane Capacitor'
+      :Capacitor5                 => 'Quantum Insane Capacitor',
+      :glass                      => 'Glass',
+      :dye                        => 'Dye',
+      :ingot_unbioxenium          => 'Ingot Unbioxenium',
+      :blank_upgrade              => 'Blank Upgrade',
+      :furnace                    => 'Furnace',
+      :diamond                    => 'Diamond',
+      :dpick                      => 'Diamond Pickaxe',
+      :ender_pearl                => 'Ender Pearl',
+      :wood_power_pipe            => 'Wooden Kinesis Pipe'
   }
 
   def self.localized
