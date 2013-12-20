@@ -9,12 +9,12 @@
 
       ga('create', 'UA-46421630-1', 'heisenbugdev.com');
       ga('send', 'pageview');;
+    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
     %link{:href=> url("favicon.png"), :rel => "icon", :type => "image/png"}
     != css :application, :media => 'screen'
     != js :app
     %link{:href => "http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700", :rel => "stylesheet", :type => "text/css"}/
     %title HeisenBugDev
-    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
   %body
     = haml(:_header)
     - if request.path.include? "wiki"
