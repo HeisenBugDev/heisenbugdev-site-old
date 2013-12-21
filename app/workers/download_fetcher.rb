@@ -24,14 +24,18 @@ class DownloadFetcher
     status_builder     = []
     file_names         = DownloadsManager.file_names
     DownloadsManager.names.each_with_index do |name, name_index|
-      tmp_numbers = []
-      tmp_files   = []
-      tmp_status  = []
+      tmp_numbers    = []
+      tmp_files      = []
+      tmp_status     = []
       get_downloads(name).each_with_index do |build, index|
         unless index > 1
-          tmp_numbers << build['number']
-          tmp_files << get_json(name, build['number'])['artifacts']
-          tmp_status << get_json(name, build['number'])['actions'][5]['level']
+          if get_json(name, build['number'])['result'] == 'FAILURE'
+            
+          else
+            tmp_numbers << build['number']
+            tmp_files << get_json(name, build['number'])['artifacts']
+            tmp_status << get_json(name, build['number'])['actions'][5]['level']
+          end
         end
       end
       numbers_builder << tmp_numbers
