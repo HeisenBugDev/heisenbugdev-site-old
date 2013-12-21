@@ -11,9 +11,9 @@
         %h2
           = name
           %small
-            %a.ui.small.button{:href => "http://ci.theronsminecraft.com/job/#{name}"}
+            %a.ui.small.basic.button{:href => "http://ci.theronsminecraft.com/job/#{name}"}
               More
-            %a.ui.small.button{:href => "https://github.com/#{@repo_orgs[name_index]}/#{@file_names[name_index]}/releases/"}
+            %a.ui.small.basic.button{:href => "https://github.com/#{@repo_orgs[name_index]}/#{@file_names[name_index]}/releases/"}
               Simple changelogs
         %h3
           %small
@@ -34,13 +34,13 @@
                   = @file_info[name_index][index]['mc_version']
                 %td
                   - file.each_with_index do |a_file, i|
-                    %a.ui.tiny.button.animated.fade{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[name_index][index]}/artifact/build/libs/#{a_file['fileName']}"}
+                    %a.ui.button.animated.fade{:class => @color[name_index][index][i], :href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[name_index][index]}/artifact/build/libs/#{a_file['fileName']}"}
                       .visible.content
                         = @file_info[name_index][index]['types'][i]
                       .hidden.content
                         Click
                 %td
-                  %a.ui.animated{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[name_index][index]}/changes"}
+                  %a.ui.small.basic.button{:href => "http://ci.theronsminecraft.com/job/#{name}/#{@numbers[name_index][index]}/changes"}
                     %i
                       Detailed Changelog
 
