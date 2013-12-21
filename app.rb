@@ -91,6 +91,7 @@ get '/downloads/?' do
   @files = JSON.parse(REDIS.get('files'))
   @numbers = JSON.parse(REDIS.get('numbers'))
   @file_info = JSON.parse(REDIS.get('file_info'))
+  @color = JSON.parse(REDIS.get('colors'))
   haml :downloads, :layout => :'layouts/application'
 end
 
