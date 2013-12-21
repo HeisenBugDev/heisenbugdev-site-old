@@ -198,6 +198,43 @@ module RecipeDefinitions
                                                                            q_plating,
                                                                            "Capacitor#{capacitor + 1}"]))
   end
+
+  Recipes.new_recipe(:quantum_tools, Crafting.new('quantum_axe', 1, [crystal,
+                                                                     crystal,
+                                                                     q_plating,
+                                                                     crystal,
+                                                                     'stick',
+                                                                     q_plating,
+                                                                     '',
+                                                                     'stick',
+                                                                     '']))
+  Recipes.new_recipe(:quantum_tools, Crafting.new('quantum_pick', 1, [crystal,
+                                                                      crystal,
+                                                                      crystal,
+                                                                      q_plating,
+                                                                      'stick',
+                                                                      q_plating,
+                                                                      '',
+                                                                      'stick',
+                                                                      '']))
+  Recipes.new_recipe(:quantum_tools, Crafting.new('quantum_shovel', 1, [q_plating,
+                                                                        crystal,
+                                                                        q_plating,
+                                                                        '',
+                                                                        'stick',
+                                                                        '',
+                                                                        '',
+                                                                        'stick',
+                                                                        '']))
+  Recipes.new_recipe(:quantum_tools, Crafting.new('quantum_sword', 1, [q_plating,
+                                                                       crystal,
+                                                                       q_plating,
+                                                                       q_plating,
+                                                                       crystal,
+                                                                       q_plating,
+                                                                       '',
+                                                                       'stick',
+                                                                       '']))
   # Recipes.new_recipe(:quantumOre, Smelting.new("cobblestone", "stone", 1))
   # Recipes.new_recipe(:QCP, Crafting.new("stone", 1, ["stick", "stone", "","stick", "stone", "","stone", "stone", ""]))
 end
@@ -256,7 +293,12 @@ module Localizations
       :diamond                    => 'Diamond',
       :dpick                      => 'Diamond Pickaxe',
       :ender_pearl                => 'Ender Pearl',
-      :wood_power_pipe            => 'Wooden Kinesis Pipe'
+      :wood_power_pipe            => 'Wooden Kinesis Pipe',
+      :stick                      => 'Stick',
+      :quantum_axe                => 'Quantum Axe',
+      :quantum_pick               => 'Quantum Pickaxe',
+      :quantum_shovel             => 'Quantum Shovel',
+      :quantum_sword              => 'Quantum Sword'
   }
 
   def self.localized
