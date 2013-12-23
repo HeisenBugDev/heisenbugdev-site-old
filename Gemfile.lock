@@ -10,6 +10,8 @@ GEM
       sass (~> 3.1)
     connection_pool (1.2.0)
     fssm (0.2.10)
+    github-markdown (0.6.3)
+    github-markup (1.0.0)
     haml (4.0.3)
       tilt
     ice_cube (0.11.1)
@@ -60,6 +62,8 @@ PLATFORMS
 
 DEPENDENCIES
   compass
+  github-markdown (~> 0.6.3)
+  github-markup (~> 1.0.0)
   haml
   newrelic_rpm (~> 3.7.0.177)
   rack-cache (~> 1.2)
