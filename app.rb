@@ -17,6 +17,7 @@ require_relative 'helpers/file_reader'
 require_relative 'helpers/renderers'
 require_relative 'helpers/build_handler'
 require_relative 'app/workers/download_fetcher'
+require_relative 'app/workers/raw_gh_fetcher'
 
 use Rack::Cache
 use Rack::Deflater
@@ -71,6 +72,7 @@ before do
   expires 60, :public, :must_revalidate
 end
 DownloadFetcher.perform_async
+RawGHFetcher.perform_async
 
 # At a minimum the main sass file must reside within the views directory
 # We create /views/stylesheets where all our sass files can safely reside
