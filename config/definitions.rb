@@ -8,15 +8,13 @@ class DownloadsManager
     attr_reader :descriptions
   end
 
-  @names        = %w(QuantumCraft QuantumCraft-dev DebugHandler)
-  @file_names   = %w(QuantumCraft QuantumCraft DebugHandler)
+  @names        = %w(QuantumCraft QuantumCraft-dev)
+  @file_names   = %w(QuantumCraft QuantumCraft)
   @repo_orgs    = %w(HeisenBugDev HeisenBugDev HeisenBugDev)
   @descriptions = ['These are the most stable builds, you should start with t'\
                   'hese.', 'You\'re living on the edge, a tech guru, someone '\
                   'who will deal with bugs (and report them). These are highl'\
-                  'y likely to break and cause problems. Use at your own risk',
-                   'You need this to play QuantumCraft and any other mods that'\
-                  ' are/will be here.']
+                  'y likely to break and cause problems. Use at your own risk']
 end
 
 #noinspection RubyLiteralArrayInspection
